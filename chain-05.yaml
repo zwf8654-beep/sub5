@@ -1,0 +1,442 @@
+# 通用链式配置：链式代理 → SOCKS5 落地
+# 节点已内置；机场更新后请重新转换并上传
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+ipv6: false
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  nameserver:
+  - https://dns.alidns.com/dns-query
+  - https://doh.pub/dns-query
+proxies:
+- name: 链式｜1｜剩余流量：430.56 GB
+  type: vless
+  server: chuixuevl1.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: updates.cdn-apple.com
+  reality-opts:
+    public-key: 70V0gDLKL3niFsNn__9MQhPMCTB_M4kNdbOKNIulii4
+    short-id: 3191b53b
+- name: 链式｜2｜距离下次重置剩余：11 天
+  type: vless
+  server: chuixuevl1.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: updates.cdn-apple.com
+  reality-opts:
+    public-key: 70V0gDLKL3niFsNn__9MQhPMCTB_M4kNdbOKNIulii4
+    short-id: 3191b53b
+- name: 链式｜3｜套餐到期：2026-12-02
+  type: vless
+  server: chuixuevl1.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: updates.cdn-apple.com
+  reality-opts:
+    public-key: 70V0gDLKL3niFsNn__9MQhPMCTB_M4kNdbOKNIulii4
+    short-id: 3191b53b
+- name: 链式｜4｜🇯🇵日本•移联01
+  type: vless
+  server: chuixuevl1.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: updates.cdn-apple.com
+  reality-opts:
+    public-key: 70V0gDLKL3niFsNn__9MQhPMCTB_M4kNdbOKNIulii4
+    short-id: 3191b53b
+- name: 链式｜5｜🇯🇵日本•移联02
+  type: vless
+  server: chuixuevl2.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: ios
+  servername: updates.cdn-apple.com
+  reality-opts:
+    public-key: XKNiiKGcjlO5JmFjfXAyWj3utWzrVJRRmoiCF_pVPDQ
+    short-id: 471edb92
+- name: 链式｜6｜🇸🇬新加坡•移联01
+  type: vless
+  server: chuixuevl5.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: download-porter.hoyoverse.com
+  reality-opts:
+    public-key: 230FTZ3Ru5jE7nCLs4KAhEQiBM_EpBp7O9_NG3u7ERc
+    short-id: d5740dcf
+- name: 链式｜7｜🇸🇬新加坡•移联02
+  type: vless
+  server: chuixuevl6.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: ios
+  servername: download-porter.hoyoverse.com
+  reality-opts:
+    public-key: NuSMwFxLxd9qfns2RiEYN-fJ-UUqbzQbmNSO9RAPzRc
+    short-id: e49dd779
+- name: 链式｜8｜🇭🇰香港•移联01
+  type: vless
+  server: chuixuevl9.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: cdn-dynmedia-1.microsoft.com
+  reality-opts:
+    public-key: Bt8p1w1P5zWruU_Blg11Y0bBiB7mHy6-4GZLZtPeREw
+    short-id: b2248634
+- name: 链式｜9｜🇭🇰香港•移联02
+  type: vless
+  server: chuixuevl10.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: ios
+  servername: cdn-dynmedia-1.microsoft.com
+  reality-opts:
+    public-key: 888QlOQEHED3U5VxsxhV_VXnpfADETzFK9UDN6ah_SA
+    short-id: c2024015
+- name: 链式｜10｜🇨🇳台湾•移联01
+  type: vless
+  server: chuixuevl13.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: cdn-dynmedia-1.microsoft.com
+  reality-opts:
+    public-key: x5IsvrCQ4FHXVbMDyPGwAhz6WXpIVmbLTnXy75NnaBs
+    short-id: 811796cb
+- name: 链式｜11｜🇰🇷韩国•移联01
+  type: vless
+  server: chuixuevl15.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: ios
+  servername: cdn-dynmedia-1.microsoft.com
+  reality-opts:
+    public-key: fn0ZwK-F94hdTCZvJfZ7uLsDrWqdwBmV6rYLgOP5YTQ
+    short-id: ecd3afe5
+- name: 链式｜12｜🇺🇸美国•移联01
+  type: vless
+  server: chuixuevl17.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: ios
+  servername: cdn-dynmedia-1.microsoft.com
+  reality-opts:
+    public-key: DUrmcdsv85_SgKUm7w5vjyd8m6WgHkpmumfrfPQCTxQ
+    short-id: 78a81ddc
+- name: 链式｜13｜🇬🇧英国•移联01
+  type: vless
+  server: chuixuevl20.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: cdn-dynmedia-1.microsoft.com
+  reality-opts:
+    public-key: 8kEyxV5uB0TQzUbTw2olPNb0tLmAcLlwoRilMdnsGDA
+    short-id: c4cd3ee1
+- name: 链式｜14｜🇩🇪德国•移联01
+  type: vless
+  server: chuixuevl22.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: ios
+  servername: cdn-dynmedia-1.microsoft.com
+  reality-opts:
+    public-key: ob_T9VBi0SdFhWh8MfyRnnjqoyvBpjrt10RcT-49hmc
+    short-id: f4008fa8
+- name: 链式｜15｜🇯🇵日本•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: ios
+  servername: vipjp1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/jp1
+    headers:
+      Host: vipjp1.cyberguard-u1s1.top
+- name: 链式｜16｜🇯🇵日本•电信02
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: safari
+  servername: vipjp2.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/jp2
+    headers:
+      Host: vipjp2.cyberguard-u1s1.top
+- name: 链式｜17｜🇸🇬新加坡•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: safari
+  servername: vipsg1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/sg1
+    headers:
+      Host: vipsg1.cyberguard-u1s1.top
+- name: 链式｜18｜🇸🇬新加坡•电信02
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: safari
+  servername: vipsg2.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/sg2
+    headers:
+      Host: vipsg2.cyberguard-u1s1.top
+- name: 链式｜19｜🇭🇰香港•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: safari
+  servername: viphk1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/hk1
+    headers:
+      Host: viphk1.cyberguard-u1s1.top
+- name: 链式｜20｜🇭🇰香港•电信02
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: ios
+  servername: viphk2.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/hk2
+    headers:
+      Host: viphk2.cyberguard-u1s1.top
+- name: 链式｜21｜🇨🇳台湾•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: safari
+  servername: viptw1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/tw1
+    headers:
+      Host: viptw1.cyberguard-u1s1.top
+- name: 链式｜22｜🇰🇷韩国•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: ios
+  servername: vipkr1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/kr1
+    headers:
+      Host: vipkr1.cyberguard-u1s1.top
+- name: 链式｜23｜🇺🇸美国•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: ios
+  servername: vipus1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/us1
+    headers:
+      Host: vipus1.cyberguard-u1s1.top
+- name: 链式｜24｜🇬🇧英国•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: ios
+  servername: vipgb1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/gb1
+    headers:
+      Host: vipgb1.cyberguard-u1s1.top
+- name: 链式｜25｜🇩🇪德国•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 1237cad9-47f1-4f5c-9957-1a97c17e07fe
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: safari
+  servername: vipde1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/de1
+    headers:
+      Host: vipde1.cyberguard-u1s1.top
+- name: SOCKS5落地
+  type: socks5
+  server: 216.132.151.109
+  port: 443
+  username: sMQGEpLGjbbB
+  password: mZ87Fy24ex
+  udp: false
+  dialer-proxy: 链式代理
+proxy-groups:
+- name: 出口选择
+  type: select
+  proxies:
+  - SOCKS5落地
+  - 链式代理
+- name: 链式代理
+  type: select
+  proxies:
+  - 链式｜1｜剩余流量：430.56 GB
+  - 链式｜2｜距离下次重置剩余：11 天
+  - 链式｜3｜套餐到期：2026-12-02
+  - 链式｜4｜🇯🇵日本•移联01
+  - 链式｜5｜🇯🇵日本•移联02
+  - 链式｜6｜🇸🇬新加坡•移联01
+  - 链式｜7｜🇸🇬新加坡•移联02
+  - 链式｜8｜🇭🇰香港•移联01
+  - 链式｜9｜🇭🇰香港•移联02
+  - 链式｜10｜🇨🇳台湾•移联01
+  - 链式｜11｜🇰🇷韩国•移联01
+  - 链式｜12｜🇺🇸美国•移联01
+  - 链式｜13｜🇬🇧英国•移联01
+  - 链式｜14｜🇩🇪德国•移联01
+  - 链式｜15｜🇯🇵日本•电信01
+  - 链式｜16｜🇯🇵日本•电信02
+  - 链式｜17｜🇸🇬新加坡•电信01
+  - 链式｜18｜🇸🇬新加坡•电信02
+  - 链式｜19｜🇭🇰香港•电信01
+  - 链式｜20｜🇭🇰香港•电信02
+  - 链式｜21｜🇨🇳台湾•电信01
+  - 链式｜22｜🇰🇷韩国•电信01
+  - 链式｜23｜🇺🇸美国•电信01
+  - 链式｜24｜🇬🇧英国•电信01
+  - 链式｜25｜🇩🇪德国•电信01
+rules:
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
+- MATCH,出口选择
