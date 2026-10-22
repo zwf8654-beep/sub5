@@ -1,4 +1,5 @@
-# Airport node snapshot. Re-generate to refresh nodes.
+# 通用链式配置：机场中转 → SOCKS5 落地
+# 节点已内置；机场更新后请重新转换并上传
 mixed-port: 7890
 allow-lan: false
 mode: rule
@@ -18,1136 +19,378 @@ dns:
   - https://dns.alidns.com/dns-query
   - https://doh.pub/dns-query
 proxies:
-- name: 机场｜1｜剩余流量：144.37 GB
+- name: 机场｜1｜剩余流量：111.58 GB
   type: vless
-  server: cdn-tw-home.kuyau.top
+  server: chuixuevl1.blowingsnowclouds.cc
   port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
   udp: true
-  flow: null
-  encryption: none
   tls: true
   skip-cert-verify: false
-  servername: swdist.apple.com
-  reality-opts:
-    public-key: YtEYoV2_3Zc-bXLf3s3dlvrnnLLN2qaGvBHQbwx7mFM
-    short-id: 1cb918
-  client-fingerprint: ios
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: swdist.apple.com
-    mode: auto
-- name: 机场｜2｜距离下次重置剩余：25 天
-  type: vless
-  server: cdn-tw-home.kuyau.top
-  port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: swdist.apple.com
-  reality-opts:
-    public-key: YtEYoV2_3Zc-bXLf3s3dlvrnnLLN2qaGvBHQbwx7mFM
-    short-id: 1cb918
-  client-fingerprint: ios
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: swdist.apple.com
-    mode: auto
-- name: 机场｜3｜套餐到期：2026-11-16
-  type: vless
-  server: cdn-tw-home.kuyau.top
-  port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: swdist.apple.com
-  reality-opts:
-    public-key: YtEYoV2_3Zc-bXLf3s3dlvrnnLLN2qaGvBHQbwx7mFM
-    short-id: 1cb918
-  client-fingerprint: ios
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: swdist.apple.com
-    mode: auto
-- name: 机场｜4｜🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
-  type: vless
-  server: cdn-tw-home.kuyau.top
-  port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: swdist.apple.com
-  reality-opts:
-    public-key: YtEYoV2_3Zc-bXLf3s3dlvrnnLLN2qaGvBHQbwx7mFM
-    short-id: 1cb918
-  client-fingerprint: ios
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: swdist.apple.com
-    mode: auto
-- name: 机场｜5｜🇹🇼 VIP¹台湾03-5.0x |三网|XHTTPⅠ
-  type: vless
-  server: cdn-jp-update02.catchu.top
-  port: 8443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: swdist.apple.com
-  reality-opts:
-    public-key: 2qVmjXg9OPXqG2xVF3KJLIN5t4d9jD1jb47JYFYufjc
-    short-id: 6523be1216d3
+  flow: xtls-rprx-vision
   client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: swdist.apple.com
-    mode: auto
-- name: 机场｜6｜🇹🇼 VIP¹台湾04-2.0x |AWS|静态
-  type: tuic
-  server: game-server.yhjust.top
-  port: 443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: game-server.yhjust.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜7｜🇹🇼 VIP¹台湾06-12x |透传
-  type: ss
-  server: 123.253.227.9
-  port: 34005
-  cipher: aes-128-gcm
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  udp: true
-- name: 机场｜8｜🇭🇰 VIP¹香港01-5.0x |三网|XHTTP Ⅱ
-  type: vless
-  server: hk-cdn-download.blannn.top
-  port: 8443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: itunes.apple.com
-  reality-opts:
-    public-key: EbxtKWlLActvhDDmdbil27vckaUjAPdVJmu-Ev2dSXo
-    short-id: a5e47f498261b773
-  client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: itunes.apple.com
-    mode: auto
-- name: 机场｜9｜🇭🇰 VIP¹香港02-5.0x |三网|XHTTP Ⅱ
-  type: vless
-  server: update-too.cococogame.top
-  port: 8443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
   servername: updates.cdn-apple.com
   reality-opts:
-    public-key: LWVmV13vWc0mMcQ8nplEwZ6ch5L-e8-uhYliH-zbNzs
-    short-id: ebfbb9b85af8
-  client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: updates.cdn-apple.com
-    mode: auto
-- name: 机场｜10｜🇭🇰 VIP¹香港03-6.0x|电联|XHTTPⅠ
+    public-key: 70V0gDLKL3niFsNn__9MQhPMCTB_M4kNdbOKNIulii4
+    short-id: 3191b53b
+- name: 机场｜2｜距离下次重置剩余：26 天
   type: vless
-  server: cdn-ali-hk-007.qiqipopular.top
+  server: chuixuevl1.blowingsnowclouds.cc
   port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
   udp: true
-  flow: null
-  encryption: none
   tls: true
   skip-cert-verify: false
-  servername: swdist.apple.com
-  reality-opts:
-    public-key: bsUnW049KvHEfo1o6aa6W4Vj8_wMSyyfqVZWECcIc0A
-    short-id: b4f66a677525
+  flow: xtls-rprx-vision
   client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: swdist.apple.com
-    mode: auto
-- name: 机场｜11｜🇭🇰 VIP¹香港04-6.0x|电联|XHTTPⅠ
-  type: vless
-  server: cdn-ali-hk-008.qiqipopular.top
-  port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: swdist.apple.com
-  reality-opts:
-    public-key: _dN3GBIAJsFt4Oe9upG0eOOegRRLKW5jW_vLGIwQCGs
-    short-id: baa3eb97
-  client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: swdist.apple.com
-    mode: auto
-- name: 机场｜12｜🇭🇰 VIP¹香港05-6.0x|电联|XHTTPⅠ
-  type: vless
-  server: cdn-ali-hk-009.qiqipopular.top
-  port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: swdist.apple.com
-  reality-opts:
-    public-key: sdHBIs0_eHeEwuVZw0Ho6wvovKp_sczhRynY9IXVI20
-    short-id: de744b62ddf6dc24
-  client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: swdist.apple.com
-    mode: auto
-- name: 机场｜13｜🇭🇰 VIP¹香港12-12x |透传
-  type: ss
-  server: 123.253.227.9
-  port: 33001
-  cipher: aes-128-gcm
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  udp: true
-- name: 机场｜14｜🇭🇰 VIP¹香港13-12x |低限制
-  type: ss
-  server: 123.253.227.9
-  port: 33002
-  cipher: aes-128-gcm
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  udp: true
-- name: 机场｜15｜🇯🇵 VIP¹日本01-5.0x |三网|XHTTPⅠ
-  type: vless
-  server: cdn-jp-if-18001.qiqipopular.top
-  port: 8443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: download-porter.hoyoverse.com
-  reality-opts:
-    public-key: 2T5Mr_J8aFPSQc1guz7XflOYMJqgJlASQrbdQ-E2uXI
-    short-id: 498e36a8036b
-  client-fingerprint: firefox
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: download-porter.hoyoverse.com
-    mode: auto
-- name: 机场｜16｜🇯🇵 VIP¹日本01-1.2x |移联|XHTTP Ⅱ
-  type: vless
-  server: cdn-jp-bg05-kitty.dtddpol.top
-  port: 8443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: music.apple.com
-  reality-opts:
-    public-key: IniSCw5DzTKZdOfgA0_UwxTfUAQN9jWbyFJCKUC10Uk
-    short-id: a17a5c9b
-  client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2dakhy21da/
-    host: music.apple.com
-    mode: auto
-- name: 机场｜17｜🇯🇵 VIP¹日本02-1.5x |移联|XHTTP Ⅱ
-  type: vless
-  server: cdn-jp-zt02-date.cococonh.top
-  port: 8443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: download-porter.hoyoverse.com
-  reality-opts:
-    public-key: S6XbMboGu757m_UGORFK8iZLH4ED6L8mjqYjz76N0l0
-    short-id: 34201a056310
-  client-fingerprint: firefox
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: download-porter.hoyoverse.com
-    mode: auto
-- name: 机场｜18｜🇯🇵 VIP¹日本03-2.0x |移联|XHTTP Ⅱ
-  type: vless
-  server: jp-cdn-sure.blannn.top
-  port: 8443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
   servername: updates.cdn-apple.com
   reality-opts:
-    public-key: gVlx1bUTM8Ei-pgQTsq5Wb-fkkFK2GpwG661nD70RVo
-    short-id: 087c484c72
-  client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: updates.cdn-apple.com
-    mode: auto
-- name: 机场｜19｜🇯🇵 VIP¹日本04-2.0x |移联|XHTTP Ⅱ
+    public-key: 70V0gDLKL3niFsNn__9MQhPMCTB_M4kNdbOKNIulii4
+    short-id: 3191b53b
+- name: 机场｜3｜套餐到期：2027-02-17
   type: vless
-  server: up-date-yx01-jp.qiqipopular.top
+  server: chuixuevl1.blowingsnowclouds.cc
   port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
   udp: true
-  flow: null
-  encryption: none
   tls: true
   skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
   servername: updates.cdn-apple.com
   reality-opts:
-    public-key: EVZ0Cdhj3xhrbQZ0qIowoXFKZ-Q3MpT0yMRam4nPGQ8
-    short-id: a6528079090b
+    public-key: 70V0gDLKL3niFsNn__9MQhPMCTB_M4kNdbOKNIulii4
+    short-id: 3191b53b
+- name: 机场｜4｜🇯🇵日本•移联01
+  type: vless
+  server: chuixuevl1.blowingsnowclouds.cc
+  port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
   client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: updates.cdn-apple.com
-    mode: auto
-- name: 机场｜20｜🇯🇵 VIP¹日本06-2.0x |AWS Ⅲ
-  type: tuic
-  server: cdn-jp06-ack.cococonh.top
-  port: 443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: cdn-jp06-ack.cococonh.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜21｜🇯🇵 VIP¹日本07-2.0x |移联
-  type: tuic
-  server: dash.dthkhhh.top
-  port: 8443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: dash.dthkhhh.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜22｜🇯🇵 VIP¹日本15-12x |透传
-  type: ss
-  server: 123.253.227.9
-  port: 34001
-  cipher: aes-128-gcm
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  udp: true
-- name: 机场｜23｜🇸🇬 VIP¹新加坡02-5.0x |三网|XHTTP Ⅱ
-  type: vless
-  server: up-data-sg-one.blannn.top
-  port: 8443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: itunes.apple.com
-  reality-opts:
-    public-key: qBD6qtYu8TUkZG7kAz7_uI0TUMYYKtcKSzhidJJpRnQ
-    short-id: e6367ea4
-  client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: itunes.apple.com
-    mode: auto
-- name: 机场｜24｜🇸🇬 VIP¹新加坡05-2.0x |AWSⅠ
-  type: tuic
-  server: game-api.aiqiqiqi.top
-  port: 443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: game-api.aiqiqiqi.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜25｜🇸🇬 VIP¹新加坡05-2.0x |AWSⅡ
-  type: tuic
-  server: cdn-sg07-high.cococonh.top
-  port: 443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: cdn-sg07-high.cococonh.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜26｜🇸🇬 VIP¹新加坡11-12x |透传
-  type: ss
-  server: 123.253.227.9
-  port: 34002
-  cipher: aes-128-gcm
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  udp: true
-- name: 机场｜27｜🇰🇷 VIP¹韩国03-2.0x |AWS
-  type: tuic
-  server: cdn-kr03-match.cococonh.top
-  port: 443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: cdn-kr03-match.cococonh.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜28｜🇺🇸 VIP¹美国01-5.0x |三网|XHTTPⅠ
-  type: vless
-  server: lax-dmit-api-01.cqiqiqi.top
-  port: 8443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: download-porter.hoyoverse.com
-  reality-opts:
-    public-key: tScNJpWK6JTti3oTCR_ajx3hHfnJSo-gxgM25iaXHz4
-    short-id: a6063961ca08
-  client-fingerprint: firefox
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: download-porter.hoyoverse.com
-    mode: auto
-- name: 机场｜29｜🇺🇸 VIP¹美国02-8.0x |三网·优化|XHTTPⅠ
-  type: vless
-  server: dash-lax-dmit-01.cqiqiqi.top
-  port: 8443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: itunes.apple.com
-  reality-opts:
-    public-key: a0eujmdZdtmJugP_uLcGw5CIzcup_KOskFUlJ2NLaC0
-    short-id: ca68
-  client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: itunes.apple.com
-    mode: auto
-- name: 机场｜30｜🇺🇸 VIP¹美国03-2.0x |4837|XHTTPⅠ
-  type: vless
-  server: cdn-us-yy22-nnd.dtddpol.top
-  port: 8443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: itunes.apple.com
-  reality-opts:
-    public-key: NqmV0XMO2HjgsThBZwjYs9I049lgLb3PwUP1HrJSYEc
-    short-id: 477f75c3
-  client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: itunes.apple.com
-    mode: auto
-- name: 机场｜31｜🇺🇸 VIP¹美国04-1.5x |4837
-  type: tuic
-  server: cdn-lax-ak03-litter.dttwdd.top
-  port: 443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: cdn-lax-ak03-litter.dttwdd.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜32｜🇺🇸 VIP¹美国07-8.0x |三网·优化|XHTTPⅠ
-  type: vless
-  server: cdn-lax-onbyone.blannn.top
-  port: 8443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: swdist.apple.com
-  reality-opts:
-    public-key: nCkcvhqougt-hylT8JuUtIAG8aV1PXP1ENKKfVXdGkI
-    short-id: 8ce361cc
-  client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: swdist.apple.com
-    mode: auto
-- name: 机场｜33｜🇺🇸 VIP¹美国08-6.5x |三网·优化|XHTTP
-  type: vless
-  server: cdn-lax-quest.biubiuca.top
-  port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: swdist.apple.com
-  reality-opts:
-    public-key: Mxiitepw7Un_G5NlBBMZknQd3SpTzvy2VaJP08Ukrmw
-    short-id: f55d5f43
-  client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: download-porter.hoyoverse.com
-    mode: auto
-- name: 机场｜34｜🇺🇸 VIP¹美国08-12x |透传
-  type: ss
-  server: 123.253.227.9
-  port: 35001
-  cipher: aes-128-gcm
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  udp: true
-- name: 机场｜35｜🇩🇪 VIP¹德国01-2.0x |三网|XHTTP
-  type: vless
-  server: cdn-music-de01.biubiuca.top
-  port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: itunes.apple.com
-  reality-opts:
-    public-key: JLGc8HppLt9g-Fl2ZHzrE2ESBFxWp5ZoFEk46j-TnAg
-    short-id: c1798488
-  client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: download-porter.hoyoverse.com
-    mode: auto
-- name: 机场｜36｜🇩🇪 VIP¹德国02-3.0x |三网|XHTTP
-  type: vless
-  server: cdn-de-yy06-ace.dthkhhh.top
-  port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: itunes.apple.com
-  reality-opts:
-    public-key: RyRyp3zFzHNlOkAW35Mw6FdAWzmUVRm1pIPwej8HPjQ
-    short-id: 8d39f561
-  client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: itunes.apple.com
-    mode: auto
-- name: 机场｜37｜🇩🇪 VIP¹德国04-3.5x |三网
-  type: tuic
-  server: baud.plmplm.org
-  port: 443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: baud.plmplm.org
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜38｜🇬🇧 VIP¹英国01-2.0x |三网|XHTTP
-  type: vless
-  server: cdn-de-match-api.biubiuca.top
-  port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: swdist.apple.com
-  reality-opts:
-    public-key: VNF7uNtwZqYbWCQTKQ-y8aM7BnGM0ZFzLb3VchhbF2s
-    short-id: b10ade0394609c38
-  client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: download-porter.hoyoverse.com
-    mode: auto
-- name: 机场｜39｜🇬🇧 VIP¹英国02-3.0x |三网|XHTTP
-  type: vless
-  server: date-macth-yy07-tw.dthkhhh.top
-  port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: swdist.apple.com
-  reality-opts:
-    public-key: RhHxr4Dpq-3z2BQ7zYtSAAXf4Icme9tK9TmLlNqqYjo
-    short-id: d98908cea8b9f1e6
-  client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: swdist.apple.com
-    mode: auto
-- name: 机场｜40｜🇬🇧 VIP¹英国03-3.5x |三网
-  type: tuic
-  server: deepen.dafkkk.com
-  port: 443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: deepen.dafkkk.com
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜41｜🇮🇳 印度02-12x |透传
-  type: ss
-  server: 123.253.227.9
-  port: 25001
-  cipher: aes-128-gcm
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  udp: true
-- name: 机场｜42｜🇦🇺 澳大利亚02-12x |透传
-  type: ss
-  server: 123.253.227.9
-  port: 25005
-  cipher: aes-128-gcm
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  udp: true
-- name: 机场｜43｜🇺🇦 乌克兰02-12x |透传
-  type: ss
-  server: 123.253.227.9
-  port: 25003
-  cipher: aes-128-gcm
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  udp: true
-- name: 机场｜44｜🇨🇦 加拿大01-2.0x |AWS
-  type: tuic
-  server: api-game.plmplm.org
-  port: 443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: api-game.plmplm.org
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜45｜🇧🇷 巴西01-2.0x |AWS
-  type: tuic
-  server: api-game.plmplm.org
-  port: 8443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: api-game.plmplm.org
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜46｜🇨🇱 智利01-2.0x |AWS
-  type: tuic
-  server: api-game.plmplm.org
-  port: 10443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: api-game.plmplm.org
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜47｜🇵🇭 菲律宾01-2.0x |AWS
-  type: tuic
-  server: api-game.plmplm.org
-  port: 24443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: api-game.plmplm.org
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜48｜🇹🇼 台湾01-1.0x |移联|家宽|XHTTP
-  type: vless
-  server: cdn-tw-game-server.cococogame.top
-  port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
-  servername: download-porter.hoyoverse.com
-  reality-opts:
-    public-key: JOqG3XQ-_s0dL0LzzW4WwZg7aUwzUVodEo3qQ6521FE
-    short-id: fccf3fc65ab6ebb0
-  client-fingerprint: firefox
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: download-porter.hoyoverse.com
-    mode: auto
-- name: 机场｜49｜🇹🇼 台湾02-1.0x |移联|家宽
-  type: tuic
-  server: match-api.dafkkk.com
-  port: 443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: match-api.dafkkk.com
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜50｜🇹🇼 台湾03-1.0x |移联|家宽|XHTTP
-  type: vless
-  server: cdn-tw-game-server.cococonh.top
-  port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
   servername: updates.cdn-apple.com
   reality-opts:
-    public-key: vW2JZ3iYaqAqGw-bG98WQRjYu39QZXlAm_PGf2_6qiA
-    short-id: 2a56c787d840
+    public-key: 70V0gDLKL3niFsNn__9MQhPMCTB_M4kNdbOKNIulii4
+    short-id: 3191b53b
+- name: 机场｜5｜🇯🇵日本•移联02
+  type: vless
+  server: chuixuevl2.blowingsnowclouds.cc
+  port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: ios
+  servername: updates.cdn-apple.com
+  reality-opts:
+    public-key: XKNiiKGcjlO5JmFjfXAyWj3utWzrVJRRmoiCF_pVPDQ
+    short-id: 471edb92
+- name: 机场｜6｜🇸🇬新加坡•移联01
+  type: vless
+  server: chuixuevl5.blowingsnowclouds.cc
+  port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
   client-fingerprint: safari
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: updates.cdn-apple.com
-    mode: auto
-- name: 机场｜51｜🇹🇼 台湾04-1.0x |移联|家宽
-  type: tuic
-  server: darned.xuyuuuuan.top
-  port: 443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: darned.xuyuuuuan.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜52｜🇭🇰 香港01-1.0x |移动|家宽
-  type: tuic
-  server: date-hkt-sy50-03.catchu.top
-  port: 443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: date-hkt-sy50-03.catchu.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜53｜🇭🇰 香港02-1.0x |移动|家宽
-  type: tuic
-  server: date-hkt-sy50-03.catchu.top
-  port: 8443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: date-hkt-sy50-03.catchu.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜54｜🇭🇰 香港03-1.0x |移动|家宽
-  type: tuic
-  server: dash.behindkkk.top
-  port: 443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: dash.behindkkk.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜55｜🇭🇰 香港04-1.0x |移动|家宽
-  type: tuic
-  server: dash.behindkkk.top
-  port: 8443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: dash.behindkkk.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜56｜🇭🇰 香港05-1.0x |直连|XHHTPⅠ
-  type: vless
-  server: cdn-hk-sofe.cococonh.top
-  port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
-  udp: true
-  flow: null
-  encryption: none
-  tls: true
-  skip-cert-verify: false
   servername: download-porter.hoyoverse.com
   reality-opts:
-    public-key: U7oS0VRwcxfqcTEAhgclRkigRx9Dy0eCR-IJZz1LvCY
-    short-id: 572a8dbb45
-  client-fingerprint: firefox
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2/
-    host: download-porter.hoyoverse.com
-    mode: auto
-- name: 机场｜57｜🇭🇰 香港08-1.0x |移动
-  type: tuic
-  server: spawn.dthkhhh.top
-  port: 8443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: spawn.dthkhhh.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜58｜🇯🇵 日本02-1.0x |移联Ⅱ
-  type: tuic
-  server: cdn-game-match.dttwdd.top
-  port: 443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: cdn-game-match.dttwdd.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜59｜🇯🇵 日本06-0.8x |移联Ⅰ
-  type: tuic
-  server: data.catchu.top
-  port: 443
-  udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  skip-cert-verify: false
-  sni: data.catchu.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜60｜🇸🇬 新加坡01-1.0x |GCP|XHTTP
+    public-key: 230FTZ3Ru5jE7nCLs4KAhEQiBM_EpBp7O9_NG3u7ERc
+    short-id: d5740dcf
+- name: 机场｜7｜🇸🇬新加坡•移联02
   type: vless
-  server: cdn-match-api.plmplm.org
+  server: chuixuevl6.blowingsnowclouds.cc
   port: 443
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  alterId: 0
-  cipher: auto
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
   udp: true
-  flow: null
-  encryption: none
   tls: true
   skip-cert-verify: false
+  flow: xtls-rprx-vision
+  client-fingerprint: ios
   servername: download-porter.hoyoverse.com
   reality-opts:
-    public-key: xZG5DIdqoumGKa3zfohA3cVDISAAEKlJkZK-4AR_GSU
-    short-id: 975912f1370e82
-  client-fingerprint: firefox
-  network: xhttp
-  xhttp-opts:
-    path: /assets/r8k2sadad054da/
-    host: download-porter.hoyoverse.com
-    mode: auto
-- name: 机场｜61｜🇸🇬 新加坡03-2.0x |移动Ⅱ
-  type: tuic
-  server: cdn-sg-mydash.dthkhhh.top
+    public-key: NuSMwFxLxd9qfns2RiEYN-fJ-UUqbzQbmNSO9RAPzRc
+    short-id: e49dd779
+- name: 机场｜8｜🇭🇰香港•移联01
+  type: vless
+  server: chuixuevl9.blowingsnowclouds.cc
   port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
   udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
+  tls: true
   skip-cert-verify: false
-  sni: cdn-sg-mydash.dthkhhh.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜62｜🇺🇸 美国03-1.0x |直连
-  type: tuic
-  server: start-up.9929729.xyz
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: cdn-dynmedia-1.microsoft.com
+  reality-opts:
+    public-key: Bt8p1w1P5zWruU_Blg11Y0bBiB7mHy6-4GZLZtPeREw
+    short-id: b2248634
+- name: 机场｜9｜🇭🇰香港•移联02
+  type: vless
+  server: chuixuevl10.blowingsnowclouds.cc
   port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
   udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
+  tls: true
   skip-cert-verify: false
-  sni: start-up.9929729.xyz
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜63｜🇺🇸 美国09-2.0x |直连
-  type: tuic
-  server: session.aceqiqiqi.top
+  flow: xtls-rprx-vision
+  client-fingerprint: ios
+  servername: cdn-dynmedia-1.microsoft.com
+  reality-opts:
+    public-key: 888QlOQEHED3U5VxsxhV_VXnpfADETzFK9UDN6ah_SA
+    short-id: c2024015
+- name: 机场｜10｜🇨🇳台湾•移联01
+  type: vless
+  server: chuixuevl13.blowingsnowclouds.cc
   port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
   udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
+  tls: true
   skip-cert-verify: false
-  sni: session.aceqiqiqi.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜64｜🇳🇱 荷兰01-0.8x |直连Ⅰ
-  type: tuic
-  server: update-nl-svs.dtddpol.top
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: cdn-dynmedia-1.microsoft.com
+  reality-opts:
+    public-key: x5IsvrCQ4FHXVbMDyPGwAhz6WXpIVmbLTnXy75NnaBs
+    short-id: 811796cb
+- name: 机场｜11｜🇰🇷韩国•移联01
+  type: vless
+  server: chuixuevl15.blowingsnowclouds.cc
   port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
   udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
+  tls: true
   skip-cert-verify: false
-  sni: update-nl-svs.dtddpol.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜65｜🇸🇪 瑞典01-1.0x |直连Ⅱ
-  type: tuic
-  server: season.cqiqiqi.top
+  flow: xtls-rprx-vision
+  client-fingerprint: ios
+  servername: cdn-dynmedia-1.microsoft.com
+  reality-opts:
+    public-key: fn0ZwK-F94hdTCZvJfZ7uLsDrWqdwBmV6rYLgOP5YTQ
+    short-id: ecd3afe5
+- name: 机场｜12｜🇺🇸美国•移联01
+  type: vless
+  server: chuixuevl17.blowingsnowclouds.cc
   port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
   udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
+  tls: true
   skip-cert-verify: false
-  sni: season.cqiqiqi.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜66｜🇻🇳 越南01
-  type: tuic
-  server: session.chovyqi.top
+  flow: xtls-rprx-vision
+  client-fingerprint: ios
+  servername: cdn-dynmedia-1.microsoft.com
+  reality-opts:
+    public-key: DUrmcdsv85_SgKUm7w5vjyd8m6WgHkpmumfrfPQCTxQ
+    short-id: 78a81ddc
+- name: 机场｜13｜🇬🇧英国•移联01
+  type: vless
+  server: chuixuevl20.blowingsnowclouds.cc
   port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
   udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
+  tls: true
   skip-cert-verify: false
-  sni: session.chovyqi.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜67｜🇷🇺 俄罗斯01-1.0x |直连
-  type: tuic
-  server: able.mnbmnb.top
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: cdn-dynmedia-1.microsoft.com
+  reality-opts:
+    public-key: 8kEyxV5uB0TQzUbTw2olPNb0tLmAcLlwoRilMdnsGDA
+    short-id: c4cd3ee1
+- name: 机场｜14｜🇩🇪德国•移联01
+  type: vless
+  server: chuixuevl22.blowingsnowclouds.cc
   port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
   udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
+  tls: true
   skip-cert-verify: false
-  sni: able.mnbmnb.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜68｜[IPV6]德国01-0.5x
-  type: tuic
-  server: timeline-n.xuyuuuuan.top
+  flow: xtls-rprx-vision
+  client-fingerprint: ios
+  servername: cdn-dynmedia-1.microsoft.com
+  reality-opts:
+    public-key: ob_T9VBi0SdFhWh8MfyRnnjqoyvBpjrt10RcT-49hmc
+    short-id: f4008fa8
+- name: 机场｜15｜🇯🇵日本•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
   port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
   udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
+  tls: true
   skip-cert-verify: false
-  sni: timeline-n.xuyuuuuan.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜69｜[IPV6]日本01
-  type: tuic
-  server: chicken-jp-1.5432456.xyz
+  flow: ''
+  client-fingerprint: ios
+  servername: vipjp1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/jp1
+    headers:
+      Host: vipjp1.cyberguard-u1s1.top
+- name: 机场｜16｜🇯🇵日本•电信02
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
   port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
   udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
+  tls: true
   skip-cert-verify: false
-  sni: chicken-jp-1.5432456.xyz
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜70｜[IPV6]美国01
-  type: tuic
-  server: game-server.blannn.top
+  flow: ''
+  client-fingerprint: safari
+  servername: vipjp2.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/jp2
+    headers:
+      Host: vipjp2.cyberguard-u1s1.top
+- name: 机场｜17｜🇸🇬新加坡•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
   port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
   udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
+  tls: true
   skip-cert-verify: false
-  sni: game-server.blannn.top
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
-- name: 机场｜71｜[IPV6]香港01-移动
-  type: tuic
-  server: core-hk-z-v6.55581555.xyz
-  port: 8443
+  flow: ''
+  client-fingerprint: safari
+  servername: vipsg1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/sg1
+    headers:
+      Host: vipsg1.cyberguard-u1s1.top
+- name: 机场｜18｜🇸🇬新加坡•电信02
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
   udp: true
-  uuid: 2fa22377-bd0d-42b1-8280-1c68f09255ff
-  password: 2fa22377-bd0d-42b1-8280-1c68f09255ff
+  tls: true
   skip-cert-verify: false
-  sni: core-hk-z-v6.55581555.xyz
-  alpn:
-  - h3
-  congestion-controller: bbr
-  udp-relay-mode: native
+  flow: ''
+  client-fingerprint: safari
+  servername: vipsg2.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/sg2
+    headers:
+      Host: vipsg2.cyberguard-u1s1.top
+- name: 机场｜19｜🇭🇰香港•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: safari
+  servername: viphk1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/hk1
+    headers:
+      Host: viphk1.cyberguard-u1s1.top
+- name: 机场｜20｜🇭🇰香港•电信02
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: ios
+  servername: viphk2.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/hk2
+    headers:
+      Host: viphk2.cyberguard-u1s1.top
+- name: 机场｜21｜🇨🇳台湾•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: safari
+  servername: viptw1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/tw1
+    headers:
+      Host: viptw1.cyberguard-u1s1.top
+- name: 机场｜22｜🇰🇷韩国•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: ios
+  servername: vipkr1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/kr1
+    headers:
+      Host: vipkr1.cyberguard-u1s1.top
+- name: 机场｜23｜🇺🇸美国•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: ios
+  servername: vipus1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/us1
+    headers:
+      Host: vipus1.cyberguard-u1s1.top
+- name: 机场｜24｜🇬🇧英国•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: ios
+  servername: vipgb1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/gb1
+    headers:
+      Host: vipgb1.cyberguard-u1s1.top
+- name: 机场｜25｜🇩🇪德国•电信01
+  type: vless
+  server: chuixuecf.blowingsnowclouds.cc
+  port: 443
+  uuid: 34b3f7a9-dc02-495c-910c-cf1033e96d25
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  flow: ''
+  client-fingerprint: safari
+  servername: vipde1.cyberguard-u1s1.top
+  network: ws
+  ws-opts:
+    path: /chuixue/de1
+    headers:
+      Host: vipde1.cyberguard-u1s1.top
 - name: SOCKS5落地
   type: socks5
   server: 216.132.151.109
@@ -1165,77 +408,31 @@ proxy-groups:
 - name: 机场中转
   type: select
   proxies:
-  - 机场｜1｜剩余流量：144.37 GB
-  - 机场｜2｜距离下次重置剩余：25 天
-  - 机场｜3｜套餐到期：2026-11-16
-  - 机场｜4｜🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
-  - 机场｜5｜🇹🇼 VIP¹台湾03-5.0x |三网|XHTTPⅠ
-  - 机场｜6｜🇹🇼 VIP¹台湾04-2.0x |AWS|静态
-  - 机场｜7｜🇹🇼 VIP¹台湾06-12x |透传
-  - 机场｜8｜🇭🇰 VIP¹香港01-5.0x |三网|XHTTP Ⅱ
-  - 机场｜9｜🇭🇰 VIP¹香港02-5.0x |三网|XHTTP Ⅱ
-  - 机场｜10｜🇭🇰 VIP¹香港03-6.0x|电联|XHTTPⅠ
-  - 机场｜11｜🇭🇰 VIP¹香港04-6.0x|电联|XHTTPⅠ
-  - 机场｜12｜🇭🇰 VIP¹香港05-6.0x|电联|XHTTPⅠ
-  - 机场｜13｜🇭🇰 VIP¹香港12-12x |透传
-  - 机场｜14｜🇭🇰 VIP¹香港13-12x |低限制
-  - 机场｜15｜🇯🇵 VIP¹日本01-5.0x |三网|XHTTPⅠ
-  - 机场｜16｜🇯🇵 VIP¹日本01-1.2x |移联|XHTTP Ⅱ
-  - 机场｜17｜🇯🇵 VIP¹日本02-1.5x |移联|XHTTP Ⅱ
-  - 机场｜18｜🇯🇵 VIP¹日本03-2.0x |移联|XHTTP Ⅱ
-  - 机场｜19｜🇯🇵 VIP¹日本04-2.0x |移联|XHTTP Ⅱ
-  - 机场｜20｜🇯🇵 VIP¹日本06-2.0x |AWS Ⅲ
-  - 机场｜21｜🇯🇵 VIP¹日本07-2.0x |移联
-  - 机场｜22｜🇯🇵 VIP¹日本15-12x |透传
-  - 机场｜23｜🇸🇬 VIP¹新加坡02-5.0x |三网|XHTTP Ⅱ
-  - 机场｜24｜🇸🇬 VIP¹新加坡05-2.0x |AWSⅠ
-  - 机场｜25｜🇸🇬 VIP¹新加坡05-2.0x |AWSⅡ
-  - 机场｜26｜🇸🇬 VIP¹新加坡11-12x |透传
-  - 机场｜27｜🇰🇷 VIP¹韩国03-2.0x |AWS
-  - 机场｜28｜🇺🇸 VIP¹美国01-5.0x |三网|XHTTPⅠ
-  - 机场｜29｜🇺🇸 VIP¹美国02-8.0x |三网·优化|XHTTPⅠ
-  - 机场｜30｜🇺🇸 VIP¹美国03-2.0x |4837|XHTTPⅠ
-  - 机场｜31｜🇺🇸 VIP¹美国04-1.5x |4837
-  - 机场｜32｜🇺🇸 VIP¹美国07-8.0x |三网·优化|XHTTPⅠ
-  - 机场｜33｜🇺🇸 VIP¹美国08-6.5x |三网·优化|XHTTP
-  - 机场｜34｜🇺🇸 VIP¹美国08-12x |透传
-  - 机场｜35｜🇩🇪 VIP¹德国01-2.0x |三网|XHTTP
-  - 机场｜36｜🇩🇪 VIP¹德国02-3.0x |三网|XHTTP
-  - 机场｜37｜🇩🇪 VIP¹德国04-3.5x |三网
-  - 机场｜38｜🇬🇧 VIP¹英国01-2.0x |三网|XHTTP
-  - 机场｜39｜🇬🇧 VIP¹英国02-3.0x |三网|XHTTP
-  - 机场｜40｜🇬🇧 VIP¹英国03-3.5x |三网
-  - 机场｜41｜🇮🇳 印度02-12x |透传
-  - 机场｜42｜🇦🇺 澳大利亚02-12x |透传
-  - 机场｜43｜🇺🇦 乌克兰02-12x |透传
-  - 机场｜44｜🇨🇦 加拿大01-2.0x |AWS
-  - 机场｜45｜🇧🇷 巴西01-2.0x |AWS
-  - 机场｜46｜🇨🇱 智利01-2.0x |AWS
-  - 机场｜47｜🇵🇭 菲律宾01-2.0x |AWS
-  - 机场｜48｜🇹🇼 台湾01-1.0x |移联|家宽|XHTTP
-  - 机场｜49｜🇹🇼 台湾02-1.0x |移联|家宽
-  - 机场｜50｜🇹🇼 台湾03-1.0x |移联|家宽|XHTTP
-  - 机场｜51｜🇹🇼 台湾04-1.0x |移联|家宽
-  - 机场｜52｜🇭🇰 香港01-1.0x |移动|家宽
-  - 机场｜53｜🇭🇰 香港02-1.0x |移动|家宽
-  - 机场｜54｜🇭🇰 香港03-1.0x |移动|家宽
-  - 机场｜55｜🇭🇰 香港04-1.0x |移动|家宽
-  - 机场｜56｜🇭🇰 香港05-1.0x |直连|XHHTPⅠ
-  - 机场｜57｜🇭🇰 香港08-1.0x |移动
-  - 机场｜58｜🇯🇵 日本02-1.0x |移联Ⅱ
-  - 机场｜59｜🇯🇵 日本06-0.8x |移联Ⅰ
-  - 机场｜60｜🇸🇬 新加坡01-1.0x |GCP|XHTTP
-  - 机场｜61｜🇸🇬 新加坡03-2.0x |移动Ⅱ
-  - 机场｜62｜🇺🇸 美国03-1.0x |直连
-  - 机场｜63｜🇺🇸 美国09-2.0x |直连
-  - 机场｜64｜🇳🇱 荷兰01-0.8x |直连Ⅰ
-  - 机场｜65｜🇸🇪 瑞典01-1.0x |直连Ⅱ
-  - 机场｜66｜🇻🇳 越南01
-  - 机场｜67｜🇷🇺 俄罗斯01-1.0x |直连
-  - 机场｜68｜[IPV6]德国01-0.5x
-  - 机场｜69｜[IPV6]日本01
-  - 机场｜70｜[IPV6]美国01
-  - 机场｜71｜[IPV6]香港01-移动
+  - 机场｜1｜剩余流量：111.58 GB
+  - 机场｜2｜距离下次重置剩余：26 天
+  - 机场｜3｜套餐到期：2027-02-17
+  - 机场｜4｜🇯🇵日本•移联01
+  - 机场｜5｜🇯🇵日本•移联02
+  - 机场｜6｜🇸🇬新加坡•移联01
+  - 机场｜7｜🇸🇬新加坡•移联02
+  - 机场｜8｜🇭🇰香港•移联01
+  - 机场｜9｜🇭🇰香港•移联02
+  - 机场｜10｜🇨🇳台湾•移联01
+  - 机场｜11｜🇰🇷韩国•移联01
+  - 机场｜12｜🇺🇸美国•移联01
+  - 机场｜13｜🇬🇧英国•移联01
+  - 机场｜14｜🇩🇪德国•移联01
+  - 机场｜15｜🇯🇵日本•电信01
+  - 机场｜16｜🇯🇵日本•电信02
+  - 机场｜17｜🇸🇬新加坡•电信01
+  - 机场｜18｜🇸🇬新加坡•电信02
+  - 机场｜19｜🇭🇰香港•电信01
+  - 机场｜20｜🇭🇰香港•电信02
+  - 机场｜21｜🇨🇳台湾•电信01
+  - 机场｜22｜🇰🇷韩国•电信01
+  - 机场｜23｜🇺🇸美国•电信01
+  - 机场｜24｜🇬🇧英国•电信01
+  - 机场｜25｜🇩🇪德国•电信01
 rules:
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
