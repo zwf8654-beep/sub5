@@ -1,0 +1,741 @@
+# 通用链式配置：链式代理 → SOCKS5 落地
+# 节点已内置；机场更新后请重新转换并上传
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+ipv6: false
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  nameserver:
+  - https://dns.alidns.com/dns-query
+  - https://doh.pub/dns-query
+proxies:
+- name: 链式｜1｜剩余流量：196.14 GB
+  type: vless
+  server: cdn-tw-home.kuyau.top
+  port: 443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: swdist.apple.com
+  reality-opts:
+    public-key: YtEYoV2_3Zc-bXLf3s3dlvrnnLLN2qaGvBHQbwx7mFM
+    short-id: 1cb918
+  client-fingerprint: ios
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: swdist.apple.com
+    mode: auto
+- name: 链式｜2｜距离下次重置剩余：31 天
+  type: vless
+  server: cdn-tw-home.kuyau.top
+  port: 443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: swdist.apple.com
+  reality-opts:
+    public-key: YtEYoV2_3Zc-bXLf3s3dlvrnnLLN2qaGvBHQbwx7mFM
+    short-id: 1cb918
+  client-fingerprint: ios
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: swdist.apple.com
+    mode: auto
+- name: 链式｜3｜套餐到期：2026-12-23
+  type: vless
+  server: cdn-tw-home.kuyau.top
+  port: 443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: swdist.apple.com
+  reality-opts:
+    public-key: YtEYoV2_3Zc-bXLf3s3dlvrnnLLN2qaGvBHQbwx7mFM
+    short-id: 1cb918
+  client-fingerprint: ios
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: swdist.apple.com
+    mode: auto
+- name: 链式｜4｜🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+  type: vless
+  server: cdn-tw-home.kuyau.top
+  port: 443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: swdist.apple.com
+  reality-opts:
+    public-key: YtEYoV2_3Zc-bXLf3s3dlvrnnLLN2qaGvBHQbwx7mFM
+    short-id: 1cb918
+  client-fingerprint: ios
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: swdist.apple.com
+    mode: auto
+- name: 链式｜5｜🇹🇼 VIP¹台湾04-2.0x |AWS|静态
+  type: tuic
+  server: game-server.yhjust.top
+  port: 443
+  udp: true
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  skip-cert-verify: false
+  sni: game-server.yhjust.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜6｜🇹🇼 VIP¹台湾06-12x |透传
+  type: ss
+  server: 123.253.227.9
+  port: 34005
+  cipher: aes-128-gcm
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  udp: true
+- name: 链式｜7｜🇭🇰 VIP¹香港01-5.0x |三网|XHTTP Ⅱ
+  type: vless
+  server: hk-cdn-download.blannn.top
+  port: 8443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: itunes.apple.com
+  reality-opts:
+    public-key: EbxtKWlLActvhDDmdbil27vckaUjAPdVJmu-Ev2dSXo
+    short-id: a5e47f498261b773
+  client-fingerprint: safari
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: itunes.apple.com
+    mode: auto
+- name: 链式｜8｜🇭🇰 VIP¹香港03-6.0x|电联|XHTTPⅠ
+  type: vless
+  server: cdn-ali-hk-007.qiqipopular.top
+  port: 443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: swdist.apple.com
+  reality-opts:
+    public-key: bsUnW049KvHEfo1o6aa6W4Vj8_wMSyyfqVZWECcIc0A
+    short-id: b4f66a677525
+  client-fingerprint: safari
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: swdist.apple.com
+    mode: auto
+- name: 链式｜9｜🇭🇰 VIP¹香港04-6.0x|电联|XHTTPⅠ
+  type: vless
+  server: cdn-ali-hk-008.qiqipopular.top
+  port: 443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: swdist.apple.com
+  reality-opts:
+    public-key: _dN3GBIAJsFt4Oe9upG0eOOegRRLKW5jW_vLGIwQCGs
+    short-id: baa3eb97
+  client-fingerprint: safari
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: swdist.apple.com
+    mode: auto
+- name: 链式｜10｜🇭🇰 VIP¹香港05-6.0x|电联|XHTTPⅠ
+  type: vless
+  server: cdn-ali-hk-009.qiqipopular.top
+  port: 443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: swdist.apple.com
+  reality-opts:
+    public-key: sdHBIs0_eHeEwuVZw0Ho6wvovKp_sczhRynY9IXVI20
+    short-id: de744b62ddf6dc24
+  client-fingerprint: safari
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: swdist.apple.com
+    mode: auto
+- name: 链式｜11｜🇭🇰 VIP¹香港12-12x |透传
+  type: ss
+  server: 123.253.227.9
+  port: 33001
+  cipher: aes-128-gcm
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  udp: true
+- name: 链式｜12｜🇭🇰 VIP¹香港13-12x |低限制
+  type: ss
+  server: 123.253.227.9
+  port: 33002
+  cipher: aes-128-gcm
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  udp: true
+- name: 链式｜13｜🇯🇵 VIP¹日本01-1.2x |移联|XHTTP Ⅱ
+  type: vless
+  server: cdn-jp-bg05-kitty.dtddpol.top
+  port: 8443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: music.apple.com
+  reality-opts:
+    public-key: IniSCw5DzTKZdOfgA0_UwxTfUAQN9jWbyFJCKUC10Uk
+    short-id: a17a5c9b
+  client-fingerprint: safari
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2dakhy21da/
+    host: music.apple.com
+    mode: auto
+- name: 链式｜14｜🇯🇵 VIP¹日本02-1.5x |移联|XHTTP Ⅱ
+  type: vless
+  server: cdn-jp-zt02-date.cococonh.top
+  port: 8443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: download-porter.hoyoverse.com
+  reality-opts:
+    public-key: S6XbMboGu757m_UGORFK8iZLH4ED6L8mjqYjz76N0l0
+    short-id: 34201a056310
+  client-fingerprint: firefox
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: download-porter.hoyoverse.com
+    mode: auto
+- name: 链式｜15｜🇯🇵 VIP¹日本03-2.0x |移联|XHTTP Ⅱ
+  type: vless
+  server: jp-cdn-sure.blannn.top
+  port: 8443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: updates.cdn-apple.com
+  reality-opts:
+    public-key: gVlx1bUTM8Ei-pgQTsq5Wb-fkkFK2GpwG661nD70RVo
+    short-id: 087c484c72
+  client-fingerprint: safari
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: updates.cdn-apple.com
+    mode: auto
+- name: 链式｜16｜🇯🇵 VIP¹日本06-2.0x |AWS Ⅲ
+  type: tuic
+  server: cdn-jp06-ack.cococonh.top
+  port: 443
+  udp: true
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  skip-cert-verify: false
+  sni: cdn-jp06-ack.cococonh.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜17｜🇯🇵 VIP¹日本15-12x |透传
+  type: ss
+  server: 123.253.227.9
+  port: 34001
+  cipher: aes-128-gcm
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  udp: true
+- name: 链式｜18｜🇸🇬 VIP¹新加坡05-2.0x |AWSⅡ
+  type: tuic
+  server: cdn-sg07-high.cococonh.top
+  port: 443
+  udp: true
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  skip-cert-verify: false
+  sni: cdn-sg07-high.cococonh.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜19｜🇸🇬 VIP¹新加坡11-12x |透传
+  type: ss
+  server: 123.253.227.9
+  port: 34002
+  cipher: aes-128-gcm
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  udp: true
+- name: 链式｜20｜🇰🇷 VIP¹韩国03-2.0x |AWS
+  type: tuic
+  server: cdn-kr03-match.cococonh.top
+  port: 443
+  udp: true
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  skip-cert-verify: false
+  sni: cdn-kr03-match.cococonh.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜21｜🇺🇸 VIP¹美国01-5.0x |三网|XHTTPⅠ
+  type: vless
+  server: lax-dmit-api-01.cqiqiqi.top
+  port: 8443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: download-porter.hoyoverse.com
+  reality-opts:
+    public-key: tScNJpWK6JTti3oTCR_ajx3hHfnJSo-gxgM25iaXHz4
+    short-id: a6063961ca08
+  client-fingerprint: firefox
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: download-porter.hoyoverse.com
+    mode: auto
+- name: 链式｜22｜🇺🇸 VIP¹美国02-8.0x |三网·优化|XHTTPⅠ
+  type: vless
+  server: dash-lax-dmit-01.cqiqiqi.top
+  port: 8443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: itunes.apple.com
+  reality-opts:
+    public-key: a0eujmdZdtmJugP_uLcGw5CIzcup_KOskFUlJ2NLaC0
+    short-id: ca68
+  client-fingerprint: safari
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: itunes.apple.com
+    mode: auto
+- name: 链式｜23｜🇺🇸 VIP¹美国03-2.0x |4837|XHTTPⅠ
+  type: vless
+  server: cdn-us-yy22-nnd.dtddpol.top
+  port: 8443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: itunes.apple.com
+  reality-opts:
+    public-key: NqmV0XMO2HjgsThBZwjYs9I049lgLb3PwUP1HrJSYEc
+    short-id: 477f75c3
+  client-fingerprint: safari
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: itunes.apple.com
+    mode: auto
+- name: 链式｜24｜🇺🇸 VIP¹美国04-1.5x |4837
+  type: tuic
+  server: cdn-lax-ak03-litter.dttwdd.top
+  port: 443
+  udp: true
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  skip-cert-verify: false
+  sni: cdn-lax-ak03-litter.dttwdd.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜25｜🇺🇸 VIP¹美国05-2.0x |4837Ⅰ
+  type: tuic
+  server: cdn-lax-yy23-ac.catchu.top
+  port: 443
+  udp: true
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  skip-cert-verify: false
+  sni: cdn-lax-yy23-ac.catchu.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜26｜🇺🇸 VIP¹美国08-12x |透传
+  type: ss
+  server: 123.253.227.9
+  port: 35001
+  cipher: aes-128-gcm
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  udp: true
+- name: 链式｜27｜🇩🇪 VIP¹德国02-3.0x |三网|XHTTPⅠ
+  type: vless
+  server: cdn-de-yy21-ct.catchu.top
+  port: 443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: itunes.apple.com
+  reality-opts:
+    public-key: hkmUa4BpGEK38CDyaKa3659Uq-qZH42MmyJXUVSVR1M
+    short-id: 83a66e74abfb
+  client-fingerprint: safari
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: itunes.apple.com
+    mode: auto
+- name: 链式｜28｜🇬🇧 VIP¹英国02-3.0x |三网|XHTTPⅠ
+  type: vless
+  server: cdn-de-gb-1.catchu.top
+  port: 443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: swdist.apple.com
+  reality-opts:
+    public-key: eSEK87j042Vz_o11t07R-uOgWE45wJgBRkiWgBpJ_mk
+    short-id: 17caf3205cfbbb
+  client-fingerprint: safari
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: swdist.apple.com
+    mode: auto
+- name: 链式｜29｜🇮🇳 印度02-12x |透传
+  type: ss
+  server: 123.253.227.9
+  port: 25001
+  cipher: aes-128-gcm
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  udp: true
+- name: 链式｜30｜🇦🇺 澳大利亚02-12x |透传
+  type: ss
+  server: 123.253.227.9
+  port: 25005
+  cipher: aes-128-gcm
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  udp: true
+- name: 链式｜31｜🇺🇦 乌克兰02-12x |透传
+  type: ss
+  server: 123.253.227.9
+  port: 25003
+  cipher: aes-128-gcm
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  udp: true
+- name: 链式｜32｜🇨🇦 加拿大01-2.0x |AWS
+  type: tuic
+  server: api-game.plmplm.org
+  port: 443
+  udp: true
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  skip-cert-verify: false
+  sni: api-game.plmplm.org
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜33｜🇧🇷 巴西01-2.0x |AWS
+  type: tuic
+  server: api-game.plmplm.org
+  port: 8443
+  udp: true
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  skip-cert-verify: false
+  sni: api-game.plmplm.org
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜34｜🇵🇭 菲律宾01-2.0x |AWS
+  type: tuic
+  server: api-game.plmplm.org
+  port: 24443
+  udp: true
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  skip-cert-verify: false
+  sni: api-game.plmplm.org
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜35｜🇹🇼 台湾01-1.0x |移联|家宽|XHTTP
+  type: vless
+  server: cdn-tw-game-server.cococogame.top
+  port: 443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: download-porter.hoyoverse.com
+  reality-opts:
+    public-key: JOqG3XQ-_s0dL0LzzW4WwZg7aUwzUVodEo3qQ6521FE
+    short-id: fccf3fc65ab6ebb0
+  client-fingerprint: firefox
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: download-porter.hoyoverse.com
+    mode: auto
+- name: 链式｜36｜🇹🇼 台湾02-1.0x |移联|家宽
+  type: tuic
+  server: match-api.dafkkk.com
+  port: 443
+  udp: true
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  skip-cert-verify: false
+  sni: match-api.dafkkk.com
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜37｜🇹🇼 台湾03-1.0x |移联|家宽|XHTTP
+  type: vless
+  server: cdn-tw-game-server.cococonh.top
+  port: 443
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: updates.cdn-apple.com
+  reality-opts:
+    public-key: vW2JZ3iYaqAqGw-bG98WQRjYu39QZXlAm_PGf2_6qiA
+    short-id: 2a56c787d840
+  client-fingerprint: safari
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: updates.cdn-apple.com
+    mode: auto
+- name: 链式｜38｜🇹🇼 台湾04-1.0x |移联|家宽
+  type: tuic
+  server: darned.xuyuuuuan.top
+  port: 443
+  udp: true
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  skip-cert-verify: false
+  sni: darned.xuyuuuuan.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜39｜🇭🇰 香港01-1.0x |移动|家宽
+  type: tuic
+  server: date-hkt-sy50-03.catchu.top
+  port: 443
+  udp: true
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  skip-cert-verify: false
+  sni: date-hkt-sy50-03.catchu.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜40｜🇭🇰 香港02-1.0x |移动|家宽
+  type: tuic
+  server: date-hkt-sy50-03.catchu.top
+  port: 8443
+  udp: true
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  skip-cert-verify: false
+  sni: date-hkt-sy50-03.catchu.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜41｜🇭🇰 香港03-1.0x |移动|家宽
+  type: tuic
+  server: dash.behindkkk.top
+  port: 443
+  udp: true
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  skip-cert-verify: false
+  sni: dash.behindkkk.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜42｜🇭🇰 香港04-1.0x |移动|家宽
+  type: tuic
+  server: dash.behindkkk.top
+  port: 8443
+  udp: true
+  uuid: f8241044-d647-45db-9c2e-ddc63624b8e0
+  password: f8241044-d647-45db-9c2e-ddc63624b8e0
+  skip-cert-verify: false
+  sni: dash.behindkkk.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: SOCKS5落地
+  type: socks5
+  server: isp.nextproxy.com
+  port: 1337
+  username: gRaTwkjOUw7E-64.137.30.65
+  password: Rz0bKtc2k2TVZF5C
+  udp: false
+  dialer-proxy: 链式代理
+proxy-groups:
+- name: 出口选择
+  type: select
+  proxies:
+  - SOCKS5落地
+  - 链式代理
+- name: 链式代理
+  type: select
+  proxies:
+  - 链式｜1｜剩余流量：196.14 GB
+  - 链式｜2｜距离下次重置剩余：31 天
+  - 链式｜3｜套餐到期：2026-12-23
+  - 链式｜4｜🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+  - 链式｜5｜🇹🇼 VIP¹台湾04-2.0x |AWS|静态
+  - 链式｜6｜🇹🇼 VIP¹台湾06-12x |透传
+  - 链式｜7｜🇭🇰 VIP¹香港01-5.0x |三网|XHTTP Ⅱ
+  - 链式｜8｜🇭🇰 VIP¹香港03-6.0x|电联|XHTTPⅠ
+  - 链式｜9｜🇭🇰 VIP¹香港04-6.0x|电联|XHTTPⅠ
+  - 链式｜10｜🇭🇰 VIP¹香港05-6.0x|电联|XHTTPⅠ
+  - 链式｜11｜🇭🇰 VIP¹香港12-12x |透传
+  - 链式｜12｜🇭🇰 VIP¹香港13-12x |低限制
+  - 链式｜13｜🇯🇵 VIP¹日本01-1.2x |移联|XHTTP Ⅱ
+  - 链式｜14｜🇯🇵 VIP¹日本02-1.5x |移联|XHTTP Ⅱ
+  - 链式｜15｜🇯🇵 VIP¹日本03-2.0x |移联|XHTTP Ⅱ
+  - 链式｜16｜🇯🇵 VIP¹日本06-2.0x |AWS Ⅲ
+  - 链式｜17｜🇯🇵 VIP¹日本15-12x |透传
+  - 链式｜18｜🇸🇬 VIP¹新加坡05-2.0x |AWSⅡ
+  - 链式｜19｜🇸🇬 VIP¹新加坡11-12x |透传
+  - 链式｜20｜🇰🇷 VIP¹韩国03-2.0x |AWS
+  - 链式｜21｜🇺🇸 VIP¹美国01-5.0x |三网|XHTTPⅠ
+  - 链式｜22｜🇺🇸 VIP¹美国02-8.0x |三网·优化|XHTTPⅠ
+  - 链式｜23｜🇺🇸 VIP¹美国03-2.0x |4837|XHTTPⅠ
+  - 链式｜24｜🇺🇸 VIP¹美国04-1.5x |4837
+  - 链式｜25｜🇺🇸 VIP¹美国05-2.0x |4837Ⅰ
+  - 链式｜26｜🇺🇸 VIP¹美国08-12x |透传
+  - 链式｜27｜🇩🇪 VIP¹德国02-3.0x |三网|XHTTPⅠ
+  - 链式｜28｜🇬🇧 VIP¹英国02-3.0x |三网|XHTTPⅠ
+  - 链式｜29｜🇮🇳 印度02-12x |透传
+  - 链式｜30｜🇦🇺 澳大利亚02-12x |透传
+  - 链式｜31｜🇺🇦 乌克兰02-12x |透传
+  - 链式｜32｜🇨🇦 加拿大01-2.0x |AWS
+  - 链式｜33｜🇧🇷 巴西01-2.0x |AWS
+  - 链式｜34｜🇵🇭 菲律宾01-2.0x |AWS
+  - 链式｜35｜🇹🇼 台湾01-1.0x |移联|家宽|XHTTP
+  - 链式｜36｜🇹🇼 台湾02-1.0x |移联|家宽
+  - 链式｜37｜🇹🇼 台湾03-1.0x |移联|家宽|XHTTP
+  - 链式｜38｜🇹🇼 台湾04-1.0x |移联|家宽
+  - 链式｜39｜🇭🇰 香港01-1.0x |移动|家宽
+  - 链式｜40｜🇭🇰 香港02-1.0x |移动|家宽
+  - 链式｜41｜🇭🇰 香港03-1.0x |移动|家宽
+  - 链式｜42｜🇭🇰 香港04-1.0x |移动|家宽
+rules:
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
+- MATCH,出口选择
