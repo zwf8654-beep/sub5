@@ -1,0 +1,814 @@
+# 通用链式配置：链式代理 → SOCKS5 落地
+# 节点已内置；机场更新后请重新转换并上传
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+ipv6: false
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  nameserver:
+  - https://dns.alidns.com/dns-query
+  - https://doh.pub/dns-query
+proxies:
+- name: 链式｜1｜剩余流量：500 GB
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: aes-128-gcm
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+- name: 链式｜2｜距离下次重置剩余：30 天
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: aes-128-gcm
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+- name: 链式｜3｜套餐到期：2026-12-15
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: aes-128-gcm
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+- name: 链式｜4｜海外集中站
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: aes-128-gcm
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+- name: 链式｜5｜请每日清晨·更新一次订阅
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: aes-128-gcm
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+- name: 链式｜6｜🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+  type: anytls
+  server: my.blackhhh.top
+  port: 443
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+  sni: my.blackhhh.top
+- name: 链式｜7｜🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+  type: vless
+  server: dash-tw-ts02.cqiqiqi.top
+  port: 443
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: download-porter.hoyoverse.com
+  reality-opts:
+    public-key: XLGRP8KZmifxzMy08XJKSsO0zTa9K4IryfWf6UQk8Wo
+    short-id: 3c25977e
+  client-fingerprint: firefox
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: download-porter.hoyoverse.com
+    mode: auto
+- name: 链式｜8｜🇹🇼 VIP²台湾04-2.0x |AWS|静态
+  type: tuic
+  server: jp-aw-2.5432456.xyz
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: jp-aw-2.5432456.xyz
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜9｜🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ
+  type: vless
+  server: cdn-hk-ali-004.blannn.top
+  port: 443
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: itunes.apple.com
+  reality-opts:
+    public-key: nntc8wXM3GMusCSbl_2brS7ZWTkRfWTqQvC7cjwHh1s
+    short-id: 65a20bebe1e529
+  client-fingerprint: safari
+  network: tcp
+- name: 链式｜10｜🇭🇰 VIP¹香港03-5.0x |三网|XHTTP Ⅱ
+  type: vless
+  server: download-hk-date.behindkkk.top
+  port: 8443
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: www.msi.com
+  reality-opts:
+    public-key: JcnXBeSvDQrYmMzTgLLFOShnmjN5UXUFOCN3QiK91DM
+    short-id: a6036033e926
+  client-fingerprint: firefox
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: www.msi.com
+    mode: auto
+- name: 链式｜11｜🇭🇰 VIP²香港06-5.0x |移动·优化Ⅰ
+  type: tuic
+  server: game-server.aiqiqiqi.top
+  port: 8443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: game-server.aiqiqiqi.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜12｜🇭🇰 VIP²香港07-8.0x |电联Ⅰ-Ⅲ
+  type: vless
+  server: dash-hk-ali-31.mnbmnb.top
+  port: 443
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: swdist.apple.com
+  reality-opts:
+    public-key: RIyQ6axMUE3WdAw7b3kW2xlCaxEAFMIxEJO-9RwCOQA
+    short-id: 66b4
+  client-fingerprint: safari
+  network: tcp
+- name: 链式｜13｜🇭🇰 VIP²香港08-8.0x |三网|家宽Ⅰ-Ⅱ
+  type: tuic
+  server: dash-hk-ali28.mnbmnb.top
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: dash-hk-ali28.mnbmnb.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜14｜🇭🇰 VIP²香港09-8.0x |电联Ⅰ-Ⅲ
+  type: anytls
+  server: up-ali-34.plmplm.org
+  port: 443
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+  sni: up-ali-34.plmplm.org
+- name: 链式｜15｜🇯🇵 VIP²日本02-5.0x |三网
+  type: anytls
+  server: data-jp-function.qiqipopular.top
+  port: 8443
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+  sni: data-jp-function.qiqipopular.top
+- name: 链式｜16｜🇯🇵 VIP²日本05-1.8x|移联 Ⅲ
+  type: tuic
+  server: cdn-zt01.cocoke.top
+  port: 8443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: cdn-zt01.cocoke.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜17｜🇯🇵 VIP²日本05-2.0x |移联
+  type: tuic
+  server: gateway.dttwdd.top
+  port: 8443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: gateway.dttwdd.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜18｜🇯🇵 VIP²日本06-2.5x |AWS Ⅱ
+  type: tuic
+  server: cdn-jp-mk-05.cqiqiqi.top
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: cdn-jp-mk-05.cqiqiqi.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜19｜🇯🇵 VIP¹日本06-3.0x |AWS Ⅲ
+  type: tuic
+  server: cdn-jp06-ack.cococonh.top
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: cdn-jp06-ack.cococonh.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜20｜🇯🇵 VIP¹日本06-3.0x |AWS Ⅳ
+  type: tuic
+  server: cdn-jp-lal-02.plmplm.org
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: cdn-jp-lal-02.plmplm.org
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜21｜🇯🇵 VIP³日本08-1.8x |移联
+  type: tuic
+  server: fuzz.qiqipopular.top
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: fuzz.qiqipopular.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜22｜🇸🇬 VIP¹新加坡02-5.0x |三网|XHTTP Ⅱ
+  type: vless
+  server: up-data-sg-one.blannn.top
+  port: 8443
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: null
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: itunes.apple.com
+  reality-opts:
+    public-key: qBD6qtYu8TUkZG7kAz7_uI0TUMYYKtcKSzhidJJpRnQ
+    short-id: e6367ea4
+  client-fingerprint: safari
+  network: xhttp
+  xhttp-opts:
+    path: /assets/r8k2/
+    host: itunes.apple.com
+    mode: auto
+- name: 链式｜23｜🇸🇬 VIP¹新加坡05-3.0x |AWS Ⅲ
+  type: tuic
+  server: cdn-sg04-my.blannn.top
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: cdn-sg04-my.blannn.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜24｜🇸🇬 VIP¹新加坡05-3.0x |AWS Ⅳ
+  type: tuic
+  server: dash-lal-sg02.mnbmnb.top
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: dash-lal-sg02.mnbmnb.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜25｜🇸🇬 VIP²新加坡06-8.0x |电联Ⅰ
+  type: anytls
+  server: cdn-ali-27-hk.mnbmnb.top
+  port: 443
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+  sni: cdn-ali-27-hk.mnbmnb.top
+- name: 链式｜26｜🇰🇷 VIP¹韩国02-4.5x |AWS|家宽
+  type: tuic
+  server: cdn-kr-season.biubiuca.top
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: cdn-kr-season.biubiuca.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜27｜🇰🇷 VIP²韩国02-4.5x |AWS|家宽
+  type: tuic
+  server: api-game.dttwdd.top
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: api-game.dttwdd.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜28｜🇰🇷 VIP²韩国03-8.0x |家宽
+  type: anytls
+  server: cdn-alice-01-k.catchu.top
+  port: 443
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+  sni: cdn-alice-01-k.catchu.top
+- name: 链式｜29｜🇺🇸 VIP²美国02-5.0x |三网
+  type: anytls
+  server: zone.aceqiqiqi.top
+  port: 443
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+  sni: zone.aceqiqiqi.top
+- name: 链式｜30｜🇺🇸 VIP²美国05-8.0x |三网·优化
+  type: vless
+  server: static.blannn.top
+  port: 443
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: swdist.apple.com
+  reality-opts:
+    public-key: cN29oJN85Q6FsH30gYcFE_mh_sa4qgcQrsMzTNtcGjI
+    short-id: 038653ddc6b585fa
+  client-fingerprint: ios
+  network: tcp
+- name: 链式｜31｜🇩🇪 VIP¹德国03-3.0x |三网 Ⅱ
+  type: tuic
+  server: cdn-de-yy21-ct.catchu.top
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: cdn-de-yy21-ct.catchu.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜32｜🇬🇧 VIP¹英国03-3.0x |三网 Ⅱ
+  type: tuic
+  server: cdn-de-uk-yy22.dttwdd.top
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: cdn-de-uk-yy22.dttwdd.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜33｜🇫🇷 法国01-2.0x |AWS
+  type: vless
+  server: dash.cqiqiqi.top
+  port: 443
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: updates.cdn-apple.com
+  reality-opts:
+    public-key: pYaygHR5KCx-OvvTBbstoJWrKA3SieL10gXYBX5tXgc
+    short-id: c37da558432718
+  client-fingerprint: ios
+  network: tcp
+- name: 链式｜34｜🇳🇬 尼日利亚01-2.0x |AWS
+  type: vless
+  server: dash.cqiqiqi.top
+  port: 8443
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: updates.cdn-apple.com
+  reality-opts:
+    public-key: aHGZx5Glg-YtSEKnKs91CqNLmo3kt4lKeMD4m1t260w
+    short-id: 24eb7d2d561b
+  client-fingerprint: ios
+  network: tcp
+- name: 链式｜35｜🇮🇳 印度01-2.0x |AWS
+  type: vless
+  server: dash.cqiqiqi.top
+  port: 10443
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: updates.cdn-apple.com
+  reality-opts:
+    public-key: 5TS-caSJrfSA6J9JSLLRtIakfWlQjdGJzBwK20qNNzY
+    short-id: d7d369a367959a
+  client-fingerprint: ios
+  network: tcp
+- name: 链式｜36｜🇮🇳 VIP²印度03-8.0x |原生IP
+  type: anytls
+  server: cdn-alice-07-yd.chovyqi.top
+  port: 443
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+  sni: cdn-alice-07-yd.chovyqi.top
+- name: 链式｜37｜🇻🇳 越南01-2.0x |AWS
+  type: vless
+  server: dash.cqiqiqi.top
+  port: 24443
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: updates.cdn-apple.com
+  reality-opts:
+    public-key: GOfv4ojaGoxLGNhZsBGny2Iw5Qj_mry7mx9C0LDxZFI
+    short-id: af005ec56070fb
+  client-fingerprint: ios
+  network: tcp
+- name: 链式｜38｜🇷🇺 俄罗斯01-2.0x |AWS
+  type: vless
+  server: dash.cqiqiqi.top
+  port: 54443
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  skip-cert-verify: false
+  servername: updates.cdn-apple.com
+  reality-opts:
+    public-key: guNXgpmoorcKY4RMeTK3jI8kGOetZBY8-015NCIbf1Y
+    short-id: c13855c6c02997e8
+  client-fingerprint: ios
+  network: tcp
+- name: 链式｜39｜🇲🇾 马来西亚01-2.0x |AWS
+  type: tuic
+  server: up-data.cocoke.top
+  port: 8443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: up-data.cocoke.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜40｜🇦🇺 VIP²澳大利亚02-8.0x |原生IP
+  type: anytls
+  server: cdn-alice-03-ao.catchu.top
+  port: 443
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+  sni: cdn-alice-03-ao.catchu.top
+- name: 链式｜41｜🇹🇭 泰国01-2.0x |AWS
+  type: tuic
+  server: up-data.cocoke.top
+  port: 10443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: up-data.cocoke.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜42｜🇺🇦 乌克兰01-2.0x |AWS
+  type: tuic
+  server: up-data.cocoke.top
+  port: 24443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: up-data.cocoke.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜43｜🇺🇦 VIP²乌克兰03-8.0x |原生IP
+  type: anytls
+  server: cdn-alice-06-w.chovyqi.top
+  port: 443
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+  sni: cdn-alice-06-w.chovyqi.top
+- name: 链式｜44｜🇮🇩 印度尼西亚01-2.0x |AWS
+  type: tuic
+  server: up-data.cocoke.top
+  port: 54443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: up-data.cocoke.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜45｜🇨🇦 加拿大01-2.0x |AWS
+  type: tuic
+  server: api-game.plmplm.org
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: api-game.plmplm.org
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜46｜🇧🇷 巴西01-2.0x |AWS
+  type: tuic
+  server: api-game.plmplm.org
+  port: 8443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: api-game.plmplm.org
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜47｜🇨🇱 智利01-2.0x |AWS
+  type: tuic
+  server: api-game.plmplm.org
+  port: 10443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: api-game.plmplm.org
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜48｜🇵🇭 菲律宾01-2.0x |AWS
+  type: tuic
+  server: api-game.plmplm.org
+  port: 24443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: api-game.plmplm.org
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜49｜🇵🇭 VIP²菲律宾02-8.0x |原生IP
+  type: anytls
+  server: cdn-alice-02-f.catchu.top
+  port: 443
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+  sni: cdn-alice-02-f.catchu.top
+- name: 链式｜50｜🇵🇭 瑞士01-2.0x |AWS
+  type: tuic
+  server: api-game.plmplm.org
+  port: 54443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: api-game.plmplm.org
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜51｜🇹🇷 VIP²土耳其02-8.0x |原生IP
+  type: anytls
+  server: cdn-alice-04-tu.catchu.top
+  port: 443
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  udp: true
+  sni: cdn-alice-04-tu.catchu.top
+- name: 链式｜52｜🇹🇼 台湾03-1.0x |移联|家宽
+  type: tuic
+  server: cdn-tw-game-server.cococonh.top
+  port: 8443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: cdn-tw-game-server.cococonh.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜53｜🇹🇼 台湾04-1.0x |移联|家宽
+  type: tuic
+  server: darned.xuyuuuuan.top
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: darned.xuyuuuuan.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜54｜🇭🇰 香港01-1.0x |移动|家宽 Ⅲ
+  type: tuic
+  server: syne-hkt02.aiqiqiqi.top
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: syne-hkt02.aiqiqiqi.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜55｜🇭🇰 香港02-1.0x |移动|家宽 Ⅲ
+  type: tuic
+  server: syne-hkt02.aiqiqiqi.top
+  port: 8443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: syne-hkt02.aiqiqiqi.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜56｜🇭🇰 香港03-1.0x |移动|家宽
+  type: tuic
+  server: dash.behindkkk.top
+  port: 443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: dash.behindkkk.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: 链式｜57｜🇭🇰 香港04-1.0x |移动|家宽
+  type: tuic
+  server: dash.behindkkk.top
+  port: 8443
+  udp: true
+  uuid: 649e8898-0a17-4f91-bf24-a14df7daf373
+  password: 649e8898-0a17-4f91-bf24-a14df7daf373
+  skip-cert-verify: false
+  sni: dash.behindkkk.top
+  alpn:
+  - h3
+  congestion-controller: bbr
+  udp-relay-mode: native
+- name: SOCKS5落地
+  type: socks5
+  server: 23.155.52.29
+  port: 443
+  username: YMWhannxjUdP
+  password: Uth2qX76r4
+  udp: false
+  dialer-proxy: 链式代理
+proxy-groups:
+- name: 出口选择
+  type: select
+  proxies:
+  - SOCKS5落地
+  - 链式代理
+- name: 链式代理
+  type: select
+  proxies:
+  - 链式｜1｜剩余流量：500 GB
+  - 链式｜2｜距离下次重置剩余：30 天
+  - 链式｜3｜套餐到期：2026-12-15
+  - 链式｜4｜海外集中站
+  - 链式｜5｜请每日清晨·更新一次订阅
+  - 链式｜6｜🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+  - 链式｜7｜🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+  - 链式｜8｜🇹🇼 VIP²台湾04-2.0x |AWS|静态
+  - 链式｜9｜🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ
+  - 链式｜10｜🇭🇰 VIP¹香港03-5.0x |三网|XHTTP Ⅱ
+  - 链式｜11｜🇭🇰 VIP²香港06-5.0x |移动·优化Ⅰ
+  - 链式｜12｜🇭🇰 VIP²香港07-8.0x |电联Ⅰ-Ⅲ
+  - 链式｜13｜🇭🇰 VIP²香港08-8.0x |三网|家宽Ⅰ-Ⅱ
+  - 链式｜14｜🇭🇰 VIP²香港09-8.0x |电联Ⅰ-Ⅲ
+  - 链式｜15｜🇯🇵 VIP²日本02-5.0x |三网
+  - 链式｜16｜🇯🇵 VIP²日本05-1.8x|移联 Ⅲ
+  - 链式｜17｜🇯🇵 VIP²日本05-2.0x |移联
+  - 链式｜18｜🇯🇵 VIP²日本06-2.5x |AWS Ⅱ
+  - 链式｜19｜🇯🇵 VIP¹日本06-3.0x |AWS Ⅲ
+  - 链式｜20｜🇯🇵 VIP¹日本06-3.0x |AWS Ⅳ
+  - 链式｜21｜🇯🇵 VIP³日本08-1.8x |移联
+  - 链式｜22｜🇸🇬 VIP¹新加坡02-5.0x |三网|XHTTP Ⅱ
+  - 链式｜23｜🇸🇬 VIP¹新加坡05-3.0x |AWS Ⅲ
+  - 链式｜24｜🇸🇬 VIP¹新加坡05-3.0x |AWS Ⅳ
+  - 链式｜25｜🇸🇬 VIP²新加坡06-8.0x |电联Ⅰ
+  - 链式｜26｜🇰🇷 VIP¹韩国02-4.5x |AWS|家宽
+  - 链式｜27｜🇰🇷 VIP²韩国02-4.5x |AWS|家宽
+  - 链式｜28｜🇰🇷 VIP²韩国03-8.0x |家宽
+  - 链式｜29｜🇺🇸 VIP²美国02-5.0x |三网
+  - 链式｜30｜🇺🇸 VIP²美国05-8.0x |三网·优化
+  - 链式｜31｜🇩🇪 VIP¹德国03-3.0x |三网 Ⅱ
+  - 链式｜32｜🇬🇧 VIP¹英国03-3.0x |三网 Ⅱ
+  - 链式｜33｜🇫🇷 法国01-2.0x |AWS
+  - 链式｜34｜🇳🇬 尼日利亚01-2.0x |AWS
+  - 链式｜35｜🇮🇳 印度01-2.0x |AWS
+  - 链式｜36｜🇮🇳 VIP²印度03-8.0x |原生IP
+  - 链式｜37｜🇻🇳 越南01-2.0x |AWS
+  - 链式｜38｜🇷🇺 俄罗斯01-2.0x |AWS
+  - 链式｜39｜🇲🇾 马来西亚01-2.0x |AWS
+  - 链式｜40｜🇦🇺 VIP²澳大利亚02-8.0x |原生IP
+  - 链式｜41｜🇹🇭 泰国01-2.0x |AWS
+  - 链式｜42｜🇺🇦 乌克兰01-2.0x |AWS
+  - 链式｜43｜🇺🇦 VIP²乌克兰03-8.0x |原生IP
+  - 链式｜44｜🇮🇩 印度尼西亚01-2.0x |AWS
+  - 链式｜45｜🇨🇦 加拿大01-2.0x |AWS
+  - 链式｜46｜🇧🇷 巴西01-2.0x |AWS
+  - 链式｜47｜🇨🇱 智利01-2.0x |AWS
+  - 链式｜48｜🇵🇭 菲律宾01-2.0x |AWS
+  - 链式｜49｜🇵🇭 VIP²菲律宾02-8.0x |原生IP
+  - 链式｜50｜🇵🇭 瑞士01-2.0x |AWS
+  - 链式｜51｜🇹🇷 VIP²土耳其02-8.0x |原生IP
+  - 链式｜52｜🇹🇼 台湾03-1.0x |移联|家宽
+  - 链式｜53｜🇹🇼 台湾04-1.0x |移联|家宽
+  - 链式｜54｜🇭🇰 香港01-1.0x |移动|家宽 Ⅲ
+  - 链式｜55｜🇭🇰 香港02-1.0x |移动|家宽 Ⅲ
+  - 链式｜56｜🇭🇰 香港03-1.0x |移动|家宽
+  - 链式｜57｜🇭🇰 香港04-1.0x |移动|家宽
+rules:
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
+- MATCH,出口选择
