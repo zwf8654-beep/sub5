@@ -1,0 +1,59 @@
+mixed-port: 7890
+ipv6: true
+allow-lan: false
+unified-delay: true
+tcp-concurrent: true
+external-controller: '127.0.0.1:9090'
+log-level: warning
+find-process-mode: strict
+profile:
+    store-selected: true
+    store-fake-ip: true
+sniffer:
+    enable: true
+    sniff: { HTTP: { ports: [80, 8080-8880], override-destination: true }, TLS: { ports: [443, 8443] } }
+    skip-domain: ['Mijia Cloud', +.push.apple.com]
+dns:
+    enable: true
+    ipv6: true
+    enhanced-mode: fake-ip
+    fake-ip-filter: [+.lan, +.local, +.market.xiaomi.com]
+    default-nameserver: [223.5.5.5, 119.29.29.29, 8.8.4.4, system]
+    nameserver: ['https://edge.yyxc.cc/dns-query/09bf9972-3199-4255-adb2-5b71caab1f6f', 'https://edge.yyxc.org/dns-query/8c47d5c9-3207-431e-a045-31b140b943c9', 'https://8.138.238.133:50008/dns-query/09bf9972-3199-4255-adb2-5b71caab1f6f']
+    direct-nameserver: [223.5.5.5, 119.29.29.29, 8.8.4.4, system]
+    proxy-server-nameserver: ['https://edge.yyxc.cc/dns-query/09bf9972-3199-4255-adb2-5b71caab1f6f', 'https://edge.yyxc.org/dns-query/8c47d5c9-3207-431e-a045-31b140b943c9', 'https://8.138.238.133:50008/dns-query/09bf9972-3199-4255-adb2-5b71caab1f6f']
+ntp:
+    enable: true
+    write-to-system: false
+geodata-mode: true
+geox-url:
+    geoip: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat'
+    geosite: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat'
+proxies:
+    - { name: '🔔剩余流量»200 GB', type: vmess, server: '1', port: 1, uuid: 2b3e4397-15f9-44cd-9e34-fd6eb262c7de, alterId: 0, cipher: auto, udp: true, mptcp: true }
+    - { name: 订阅逾期»2026-12-23, type: vmess, server: '1', port: 1, uuid: 2b3e4397-15f9-44cd-9e34-fd6eb262c7de, alterId: 0, cipher: auto, udp: true, mptcp: true }
+    - { name: '官網：https://yyxc.org[无法使用请尝试更新订阅]', type: vmess, server: '1', port: 1, uuid: 2b3e4397-15f9-44cd-9e34-fd6eb262c7de, alterId: 0, cipher: auto, udp: true, mptcp: true }
+    - { name: 💡请选择以下节点, type: vmess, server: '1', port: 1, uuid: 2b3e4397-15f9-44cd-9e34-fd6eb262c7de, alterId: 0, cipher: auto, udp: true, mptcp: true }
+    - { name: 'HKG 01【静态住宅/福利赠送】', type: vmess, server: cnnd-1.stuix.org, port: 11300, uuid: 2b3e4397-15f9-44cd-9e34-fd6eb262c7de, alterId: 0, cipher: auto, udp: true, tls: true, skip-cert-verify: true, servername: cos.ap-hongkong.myqcloud.com, client-fingerprint: safari, mptcp: true }
+    - { name: '新加坡SGP【静态专线住宅】', type: vmess, server: cnnd-2.stuix.org, port: 15300, uuid: 2b3e4397-15f9-44cd-9e34-fd6eb262c7de, alterId: 0, cipher: auto, udp: true, tls: true, skip-cert-verify: true, servername: cos.accelerate.myqcloud.com, client-fingerprint: safari, mptcp: true }
+proxy-groups:
+    - { name: 节点选择☁, type: select, proxies: [自动选择, 负载均衡Hash, 'HKG 01【静态住宅/福利赠送】', '新加坡SGP【静态专线住宅】'] }
+    - { name: 订阅信息, type: select, proxies: ['🔔剩余流量»200 GB', 订阅逾期»2026-12-23] }
+    - { name: 官网, type: select, proxies: ['官網：https://yyxc.org[无法使用请尝试更新订阅]'] }
+    - { name: 自动选择, type: fallback, proxies: ['HKG 01【静态住宅/福利赠送】', '新加坡SGP【静态专线住宅】'], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
+    - { name: 负载均衡Hash, type: load-balance, proxies: ['HKG 01【静态住宅/福利赠送】', '新加坡SGP【静态专线住宅】'], url: 'http://www.gstatic.com/generate_204', strategy: consistent-hashing, interval: 7200 }
+    - { name: GLOBAL, type: select, proxies: [自动选择, '🔔剩余流量»200 GB', 订阅逾期»2026-12-23, '官網：https://yyxc.org[无法使用请尝试更新订阅]', 💡请选择以下节点, 'HKG 01【静态住宅/福利赠送】', '新加坡SGP【静态专线住宅】'], exclude-filter: 剩余|重置|订阅|官|请 }
+rules:
+    - 'DOMAIN,rss-hk.yyxc.org,DIRECT'
+    - 'GEOSITE,apple@cn,DIRECT'
+    - 'GEOSITE,steam@cn,DIRECT'
+    - 'GEOSITE,category-games@cn,DIRECT'
+    - 'GEOSITE,onedrive,DIRECT'
+    - 'GEOIP,private,DIRECT,no-resolve'
+    - 'GEOIP,telegram,节点选择☁,no-resolve'
+    - 'GEOSITE,google,节点选择☁'
+    - 'GEOSITE,category-scholar-!cn,节点选择☁'
+    - 'GEOSITE,linkedin,节点选择☁'
+    - 'GEOSITE,cn,DIRECT'
+    - 'GEOIP,CN,DIRECT,no-resolve'
+    - 'MATCH,节点选择☁'
