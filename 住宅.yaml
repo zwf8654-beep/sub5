@@ -1,0 +1,617 @@
+mixed-port: 7890
+allow-lan: false
+bind-address: '*'
+mode: rule
+log-level: info
+ipv6: false
+unified-delay: true
+tcp-concurrent: true
+external-controller: 127.0.0.1:9090
+profile:
+  store-selected: true
+dns:
+  enable: true
+  listen: 127.0.0.1:1053
+  ipv6: false
+  enhanced-mode: redir-host
+  use-hosts: true
+  use-system-hosts: true
+  respect-rules: true
+  prefer-h3: false
+  default-nameserver:
+    - https://223.5.5.5/dns-query
+    - https://223.6.6.6/dns-query
+  proxy-server-nameserver:
+    - https://223.5.5.5/dns-query#DIRECT
+    - https://223.6.6.6/dns-query#DIRECT
+  nameserver:
+    - https://1.1.1.1/dns-query#MNKCloud
+    - https://8.8.8.8/dns-query#MNKCloud
+  direct-nameserver:
+    - https://223.5.5.5/dns-query#DIRECT
+    - https://223.6.6.6/dns-query#DIRECT
+  direct-nameserver-follow-policy: true
+  nameserver-policy:
+    +.lan: system
+    +.local: system
+    +.localhost: system
+    +.home.arpa: system
+    +.googleapis.cn:
+      - https://1.1.1.1/dns-query#Google
+      - https://8.8.8.8/dns-query#Google
+    +.google.cn:
+      - https://1.1.1.1/dns-query#Google
+      - https://8.8.8.8/dns-query#Google
+    +.xn--ngstr-lra8j.com:
+      - https://1.1.1.1/dns-query#Google
+      - https://8.8.8.8/dns-query#Google
+    +.gvt0.com:
+      - https://1.1.1.1/dns-query#Google
+      - https://8.8.8.8/dns-query#Google
+    +.gvt1.com:
+      - https://1.1.1.1/dns-query#Google
+      - https://8.8.8.8/dns-query#Google
+    +.gvt2.com:
+      - https://1.1.1.1/dns-query#Google
+      - https://8.8.8.8/dns-query#Google
+    +.gvt3.com:
+      - https://1.1.1.1/dns-query#Google
+      - https://8.8.8.8/dns-query#Google
+    +.gvt1-cn.com:
+      - https://1.1.1.1/dns-query#Google
+      - https://8.8.8.8/dns-query#Google
+    +.gvt2-cn.com:
+      - https://1.1.1.1/dns-query#Google
+      - https://8.8.8.8/dns-query#Google
+    +.openai.com,+.chatgpt.com,+.oaistatic.com,+.oaiusercontent.com,+.anthropic.com,+.claude.ai,+.claude.com,+.gemini.google.com,+.notebooklm.google.com,+.generativelanguage.googleapis.com,+.aistudio.google.com,+.gemini.gstatic.com,ai.google.dev,notebooklm.googleapis.com,notebooklm-pa.googleapis.com,+.githubcopilot.com,copilot-proxy.githubusercontent.com,+.perplexity.ai,+.grok.com,+.x.ai:
+      - https://1.1.1.1/dns-query#AI
+      - https://8.8.8.8/dns-query#AI
+    +.youtube.com,+.youtu.be,+.ytimg.com,+.googlevideo.com,+.youtube-nocookie.com,+.ggpht.com,+.ggpht.cn,yt3.googleusercontent.com,+.youtubei.googleapis.com,+.youtube.googleapis.com,+.youtubeembeddedplayer.googleapis.com:
+      - https://1.1.1.1/dns-query#YouTube
+      - https://8.8.8.8/dns-query#YouTube
+    +.google.com,+.googleapis.com,+.googleusercontent.com,+.gstatic.com,+.android.com,+.googleplay.com,+.g.co,+.google.com.hk,+.google.com.tw,+.google.co.jp,+.google.co.kr:
+      - https://1.1.1.1/dns-query#Google
+      - https://8.8.8.8/dns-query#Google
+    +.github.com,+.githubusercontent.com,+.githubassets.com,+.github.io,+.github.dev,+.ghcr.io:
+      - https://1.1.1.1/dns-query#GitHub
+      - https://8.8.8.8/dns-query#GitHub
+    +.telegram.org,+.t.me,+.telegra.ph,+.telegram.me,+.telegram-cdn.org,+.cdn-telegram.org,+.telesco.pe:
+      - https://1.1.1.1/dns-query#Telegram
+      - https://8.8.8.8/dns-query#Telegram
+    +.netflix.com,+.netflix.net,+.nflxvideo.net,+.nflximg.net,+.nflximg.com,+.nflxso.net,+.nflxext.com,+.fast.com,+.disney.com,+.disneyplus.com,+.dssott.com,+.bamgrid.com,+.disney-plus.net:
+      - https://1.1.1.1/dns-query#流媒体
+      - https://8.8.8.8/dns-query#流媒体
+    +.tiktok.com,+.tiktokv.com,+.tiktokv.us,+.tiktokcdn.com,+.tiktokcdn-us.com,+.tiktokcdn-eu.com,+.tiktokvapp.com,+.musical.ly:
+      - https://1.1.1.1/dns-query#TikTok
+      - https://8.8.8.8/dns-query#TikTok
+    +.spotify.com,+.scdn.co,+.spotifycdn.com,+.spotifycdn.net,+.pscdn.co,+.spoti.fi:
+      - https://1.1.1.1/dns-query#Spotify
+      - https://8.8.8.8/dns-query#Spotify
+    +.paypal.com,+.paypalobjects.com,+.paypal.me:
+      - https://1.1.1.1/dns-query#PayPal
+      - https://8.8.8.8/dns-query#PayPal
+    +.cn,+.qq.com,+.gtimg.com,+.baidu.com,+.bdstatic.com,+.bilibili.com,+.bilivideo.com,+.hdslb.com,+.jd.com,+.360buyimg.com,+.taobao.com,+.tmall.com,+.alicdn.com,+.alipay.com,+.163.com,+.126.com,+.douyin.com,+.weibo.com:
+      - https://223.5.5.5/dns-query#DIRECT
+      - https://223.6.6.6/dns-query#DIRECT
+hosts:
+  localhost: 127.0.0.1
+proxies:
+  - name: 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+    type: anytls
+    server: oneman-tw01.kuyau.top
+    port: 443
+    password: 2b05d154-2fc8-42e1-8ab9-7e9866033247
+    udp: true
+    sni: oneman-tw01.kuyau.top
+  - name: 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+    type: vless
+    server: dash-tw-ts02.cqiqiqi.top
+    port: 443
+    uuid: 2b05d154-2fc8-42e1-8ab9-7e9866033247
+    alterId: 0
+    cipher: auto
+    udp: true
+    flow: null
+    encryption: none
+    tls: true
+    skip-cert-verify: false
+    servername: swdist.apple.com
+    reality-opts:
+      public-key: vc7QnMfKSbSytUu7N6uCUO1aKRZCaYeeXOngnNkvXlo
+      short-id: ecbc504f85778c
+    client-fingerprint: safari
+    network: xhttp
+    xhttp-opts:
+      path: /assets/r8k2/
+      host: download-porter.hoyoverse.com
+      mode: auto
+  - name: 🇹🇼 台湾04-1.0x |移联|家宽
+    type: tuic
+    server: darned.xuyuuuuan.top
+    port: 443
+    udp: true
+    uuid: 2b05d154-2fc8-42e1-8ab9-7e9866033247
+    password: 2b05d154-2fc8-42e1-8ab9-7e9866033247
+    skip-cert-verify: false
+    sni: darned.xuyuuuuan.top
+    alpn:
+      - h3
+    congestion-controller: bbr
+    udp-relay-mode: native
+  - name: 🇹🇼 台湾03-1.0x |移联|家宽
+    type: tuic
+    server: cdn-tw-game-server.cococonh.top
+    port: 8443
+    udp: true
+    uuid: 2b05d154-2fc8-42e1-8ab9-7e9866033247
+    password: 2b05d154-2fc8-42e1-8ab9-7e9866033247
+    skip-cert-verify: false
+    sni: cdn-tw-game-server.cococonh.top
+    alpn:
+      - h3
+    congestion-controller: bbr
+    udp-relay-mode: native
+  - name: 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+    type: tuic
+    server: jp-aw-2.5432456.xyz
+    port: 443
+    udp: true
+    uuid: 2b05d154-2fc8-42e1-8ab9-7e9866033247
+    password: 2b05d154-2fc8-42e1-8ab9-7e9866033247
+    skip-cert-verify: false
+    sni: jp-aw-2.5432456.xyz
+    alpn:
+      - h3
+    congestion-controller: bbr
+    udp-relay-mode: native
+  - name: 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+    type: vless
+    server: cdn-ali-42-me.dtddpol.top
+    port: 443
+    uuid: 2b05d154-2fc8-42e1-8ab9-7e9866033247
+    alterId: 0
+    cipher: auto
+    udp: true
+    flow: xtls-rprx-vision
+    encryption: none
+    tls: true
+    skip-cert-verify: false
+    servername: itunes.apple.com
+    reality-opts:
+      public-key: wL4BrJ4f8EAWhiuitwVvJeZh3hink33I-3OcRHhgvF0
+      short-id: 57ff3f
+    client-fingerprint: safari
+    network: tcp
+proxy-groups:
+  - name: 海外集中
+    type: select
+    proxies:
+      - 自动选择
+      - 故障转移
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+  - name: 自动选择
+    type: url-test
+    proxies:
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+    url: https://www.gstatic.com/generate_204
+    interval: 600
+    timeout: 5000
+    tolerance: 50
+    lazy: true
+  - name: 故障转移
+    type: fallback
+    proxies:
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    timeout: 5000
+    lazy: true
+  - name: Google
+    type: select
+    proxies:
+      - 海外集中
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+  - name: AI
+    type: select
+    proxies:
+      - 海外集中
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+  - name: YouTube
+    type: select
+    proxies:
+      - 海外集中
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+  - name: GitHub
+    type: select
+    proxies:
+      - 海外集中
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+  - name: Telegram
+    type: select
+    proxies:
+      - 海外集中
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+  - name: 流媒体
+    type: select
+    proxies:
+      - 海外集中
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+  - name: TikTok
+    type: select
+    proxies:
+      - 海外集中
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+  - name: Spotify
+    type: select
+    proxies:
+      - 海外集中
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+  - name: PayPal
+    type: select
+    proxies:
+      - 海外集中
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+  - name: Apple
+    type: select
+    proxies:
+      - DIRECT
+      - 海外集中
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+  - name: Microsoft
+    type: select
+    proxies:
+      - DIRECT
+      - 海外集中
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+  - name: 游戏平台
+    type: select
+    proxies:
+      - DIRECT
+      - 海外集中
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+  - name: 其他流量
+    type: select
+    proxies:
+      - 海外集中
+      - 🇹🇼 VIP²台湾01-1.0x |移联|家宽Ⅱ
+      - 🇹🇼 VIP¹台湾01-1.0x |移联|家宽|XHTTP
+      - 🇹🇼 台湾04-1.0x |移联|家宽
+      - 🇹🇼 台湾03-1.0x |移联|家宽
+      - 🇹🇼 VIP²台湾04-2.0x |AWS|静态
+      - 🇹🇼 VIP²台湾05-8.0x |电联|家宽Ⅰ-Ⅲ
+rules:
+  - DOMAIN,77.74.199.188,DIRECT
+  - DOMAIN,localhost,DIRECT
+  - DOMAIN-SUFFIX,localhost,DIRECT
+  - DOMAIN-SUFFIX,lan,DIRECT
+  - DOMAIN-SUFFIX,local,DIRECT
+  - DOMAIN-SUFFIX,home.arpa,DIRECT
+  - IP-CIDR,0.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+  - IP-CIDR6,::1/128,DIRECT,no-resolve
+  - IP-CIDR6,fc00::/7,DIRECT,no-resolve
+  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
+  - RULE-SET,private_domain,DIRECT
+  - DOMAIN-SUFFIX,googleapis.cn,Google
+  - DOMAIN-SUFFIX,google.cn,Google
+  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,Google
+  - DOMAIN-SUFFIX,gvt0.com,Google
+  - DOMAIN-SUFFIX,gvt1.com,Google
+  - DOMAIN-SUFFIX,gvt2.com,Google
+  - DOMAIN-SUFFIX,gvt3.com,Google
+  - DOMAIN-SUFFIX,gvt1-cn.com,Google
+  - DOMAIN-SUFFIX,gvt2-cn.com,Google
+  - DOMAIN-SUFFIX,openai.com,AI
+  - DOMAIN-SUFFIX,chatgpt.com,AI
+  - DOMAIN-SUFFIX,oaistatic.com,AI
+  - DOMAIN-SUFFIX,oaiusercontent.com,AI
+  - DOMAIN-SUFFIX,anthropic.com,AI
+  - DOMAIN-SUFFIX,claude.ai,AI
+  - DOMAIN-SUFFIX,claude.com,AI
+  - DOMAIN,gemini.google.com,AI
+  - DOMAIN,notebooklm.google.com,AI
+  - DOMAIN,generativelanguage.googleapis.com,AI
+  - RULE-SET,ai,AI
+  - DOMAIN-SUFFIX,youtube.com,YouTube
+  - DOMAIN-SUFFIX,youtu.be,YouTube
+  - DOMAIN-SUFFIX,ytimg.com,YouTube
+  - DOMAIN-SUFFIX,googlevideo.com,YouTube
+  - DOMAIN-SUFFIX,youtube-nocookie.com,YouTube
+  - RULE-SET,youtube,YouTube
+  - DOMAIN-SUFFIX,google.com,Google
+  - DOMAIN-SUFFIX,googleapis.com,Google
+  - DOMAIN-SUFFIX,googleusercontent.com,Google
+  - DOMAIN-SUFFIX,gstatic.com,Google
+  - DOMAIN-SUFFIX,ggpht.com,Google
+  - DOMAIN-SUFFIX,android.com,Google
+  - DOMAIN-SUFFIX,googleplay.com,Google
+  - RULE-SET,google,Google
+  - RULE-SET,google_cn,Google
+  - DOMAIN-SUFFIX,github.com,GitHub
+  - DOMAIN-SUFFIX,githubusercontent.com,GitHub
+  - DOMAIN-SUFFIX,githubassets.com,GitHub
+  - RULE-SET,github,GitHub
+  - DOMAIN-SUFFIX,telegram.org,Telegram
+  - DOMAIN-SUFFIX,telegra.ph,Telegram
+  - DOMAIN-SUFFIX,t.me,Telegram
+  - RULE-SET,telegram,Telegram
+  - RULE-SET,netflix,流媒体
+  - RULE-SET,disney,流媒体
+  - RULE-SET,tiktok,TikTok
+  - RULE-SET,spotify,Spotify
+  - RULE-SET,paypal,PayPal
+  - DOMAIN,developer.apple.com,海外集中
+  - DOMAIN,testflight.apple.com,海外集中
+  - DOMAIN,sandbox.itunes.apple.com,海外集中
+  - DOMAIN-SUFFIX,apps.apple.com,海外集中
+  - DOMAIN-SUFFIX,blobstore.apple.com,海外集中
+  - DOMAIN,cvws.icloud-content.com,海外集中
+  - RULE-SET,apple,Apple
+  - RULE-SET,win_update,DIRECT
+  - RULE-SET,microsoft,Microsoft
+  - RULE-SET,games_cn,DIRECT
+  - RULE-SET,steam,游戏平台
+  - RULE-SET,proxy_domain,海外集中
+  - RULE-SET,cn_domain,DIRECT
+  - RULE-SET,telegram_ip,Telegram,no-resolve
+  - RULE-SET,google_ip,Google,no-resolve
+  - RULE-SET,cn_ip,DIRECT
+  - MATCH,其他流量
+rule-providers:
+  private_domain:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/private_domain.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs
+    interval: 86400
+    proxy: MNKCloud
+  cn_domain:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/cn_domain.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs
+    interval: 86400
+    proxy: MNKCloud
+  proxy_domain:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/proxy_domain.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs
+    interval: 86400
+    proxy: MNKCloud
+  ai:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/ai.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs
+    interval: 86400
+    proxy: MNKCloud
+  google:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/google.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs
+    interval: 86400
+    proxy: MNKCloud
+  google_cn:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/google_cn.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-cn.mrs
+    interval: 86400
+    proxy: MNKCloud
+  github:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/github.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs
+    interval: 86400
+    proxy: MNKCloud
+  youtube:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/youtube.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs
+    interval: 86400
+    proxy: MNKCloud
+  telegram:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/telegram.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs
+    interval: 86400
+    proxy: MNKCloud
+  netflix:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/netflix.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs
+    interval: 86400
+    proxy: MNKCloud
+  disney:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/disney.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disney.mrs
+    interval: 86400
+    proxy: MNKCloud
+  tiktok:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/tiktok.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs
+    interval: 86400
+    proxy: MNKCloud
+  apple:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/apple.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs
+    interval: 86400
+    proxy: MNKCloud
+  microsoft:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/microsoft.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs
+    interval: 86400
+    proxy: MNKCloud
+  spotify:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/spotify.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.mrs
+    interval: 86400
+    proxy: MNKCloud
+  steam:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/steam.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs
+    interval: 86400
+    proxy: MNKCloud
+  games_cn:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/games_cn.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games%40cn.mrs
+    interval: 86400
+    proxy: MNKCloud
+  paypal:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/paypal.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs
+    interval: 86400
+    proxy: MNKCloud
+  win_update:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/mnk-v1/win_update.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/win-update.mrs
+    interval: 86400
+    proxy: MNKCloud
+  cn_ip:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    path: ./ruleset/mnk-v1/cn_ip.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
+    interval: 86400
+    proxy: MNKCloud
+  telegram_ip:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    path: ./ruleset/mnk-v1/telegram_ip.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs
+    interval: 86400
+    proxy: MNKCloud
+  google_ip:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    path: ./ruleset/mnk-v1/google_ip.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs
+    interval: 86400
+    proxy: MNKCloud
